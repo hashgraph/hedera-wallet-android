@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        style="@style/ContentLayout"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textview_name"
+        style="@style/KeyTextView"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        />
+
+        <TextView
+            android:id="@+id/textview_account_id"
+            style="@style/KeyTextView"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/text_backup_wallet_description"
+            android:layout_width="match_parent"
+            style="@style/OnboardingParagraph"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:text="@string/verify_alias"
+            android:textSize="@dimen/font_regular_very_large"
+            android:textColor="@color/text_primary"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/btn_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:weightSum="2">
+
+
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                style="@style/HgcButton"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/background_button_hgc"
+                android:text="@string/btn_text_cancel" />
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                style="@style/HgcButton"
+                android:text="@string/btn_text_confirm"
+                android:textColor="@color/positive"/>
+        </LinearLayout>
+</LinearLayout>
+</LinearLayout>

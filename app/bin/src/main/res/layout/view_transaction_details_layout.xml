@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PageLayout"
+    >
+
+    <include layout="@layout/title_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            style="@style/ContentLayout"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/text_hgc_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/styrenea_regular"
+                    android:text="@string/text_hgc_value"
+                    android:textColor="@color/positive"
+                    android:textSize="@dimen/font_hgc_amount_very_large" />
+
+                <TextView
+                    android:id="@+id/hgc_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="0dp"
+                    android:layout_alignBottom="@+id/text_hgc_amount"
+                    android:layout_marginBottom="8dp"
+                    android:layout_toLeftOf="@+id/text_hgc_amount"
+                    android:text="@string/text_hgc_icon"
+                    android:textColor="@color/positive"
+                    android:fontFamily="@font/styreneh_regular"
+                    android:textSize="20sp"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_dollor_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/styrenea_regular"
+                android:text="@string/text_hgc_value"
+                android:textColor="@color/positive"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/text_time"
+                style="@style/CaptionText"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="@string/text_time"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/text_from"
+                    style="@style/CaptionText"
+                    android:text="@string/text_from" />
+
+                <ImageView
+                    android:id="@+id/image_copy_from_acount"
+                    style="@style/ImageviewCopy"
+                    android:layout_alignBottom="@+id/text_from"
+                    />
+
+            </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+
+                    <TextView
+                        android:id="@+id/text_from_account_name"
+                        style="@style/KeyTextView"
+                        android:padding="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/text_verify_from_account"
+                        style="@style/HgcPayClickableTextView"
+                        android:layout_margin="5dp"
+                        android:visibility="gone"
+                        android:text="@string/text_verify" />
+
+                    />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text_from_account_id"
+                    style="@style/KeyTextView"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/text_to"
+                    style="@style/CaptionText"
+                    android:text="@string/text_to" />
+
+                <ImageView
+                    android:id="@+id/image_copy_to_account"
+                    style="@style/ImageviewCopy"
+                    android:layout_alignBottom="@+id/text_to"
+                    />
+
+            </RelativeLayout>
+
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+
+                    <TextView
+                        android:id="@+id/text_to_account_name"
+                        style="@style/KeyTextView"
+                        android:padding="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/text_verify_to_account"
+                        style="@style/HgcPayClickableTextView"
+                        android:layout_margin="5dp"
+                        android:visibility="gone"
+                        android:text="@string/text_verify" />
+
+                    />
+
+
+                </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_to_account_id"
+                style="@style/KeyTextView"
+                android:layout_marginTop="10dp"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:id="@+id/text_note"
+                style="@style/CaptionTextNote"
+                android:layout_marginTop="30dp"
+                 />
+
+            <EditText
+                android:id="@+id/edittext_note"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/user_inform_edittext_background"
+                android:gravity="top"
+                android:padding="5dp"
+                android:textCursorDrawable="@drawable/edittext_cursor_view"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/styrenea_regular"
+                android:textSize="@dimen/font_regular_medium"
+                android:focusableInTouchMode="true"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/text_fee"
+                    style="@style/CaptionText"
+                    android:text="@string/text_fee" />
+
+                <TextView
+                    android:id="@+id/text_fee_value"
+                    style="@style/CaptionText"
+                    android:layout_below="@+id/add_note"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/text_fee"
+                    android:drawableLeft="@drawable/textdrawable_icon_size"
+                    android:gravity="center_vertical|center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/text_hgc_value" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

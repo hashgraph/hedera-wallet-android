@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_title_bar"
+    android:orientation="vertical">
+    <include layout="@layout/title_bar" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="opencrowd.hgc.hgcwallet.ui.onboard.OnboardActivity">
+
+    <Button
+        android:id="@+id/ED25519"
+        android:layout_width="wrap_content"
+        style="@style/HgcButton"
+        android:layout_above="@+id/text_or"
+        android:layout_centerHorizontal="true"
+        android:text="@string/text_ED25519"
+        android:paddingLeft="110dp"
+        android:paddingRight="110dp"
+
+         />
+    <TextView
+        android:id="@+id/text_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/text_or"
+        android:layout_margin="20dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/EC384"
+        android:layout_width="wrap_content"
+        style="@style/HgcButton"
+        android:text="@string/text_EC384"
+        android:layout_alignStart="@+id/ED25519"
+        android:layout_alignEnd="@+id/ED25519"
+        android:layout_below="@+id/text_or"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+</LinearLayout>

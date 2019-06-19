@@ -1,0 +1,49 @@
+<RelativeLayout android:id="@+id/relative"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_top_bar"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/image_side_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:src="@drawable/ic_hamburger"
+        android:contentDescription="@string/text_todo" />
+
+    <ImageView
+        android:id="@+id/image_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
+        android:layout_toLeftOf="@+id/image_side_menu"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:src="@drawable/ic_sync"
+        android:contentDescription="@string/text_todo" />
+
+    <TextView
+        android:id="@+id/actionbar_title"
+        android:text="@string/text_get_started_with_hgc"
+        style="@style/TopBarTitle"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        />
+
+    <ImageView
+        android:id="@+id/image_home"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignBottom="@+id/text_new_wallet"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:scaleType="center"
+        android:src="@drawable/hbar_grey_white_small"
+        android:contentDescription="@string/text_todo" />
+</RelativeLayout>

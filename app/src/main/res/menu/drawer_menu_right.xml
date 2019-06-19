@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="@string/menuItem_accounts">
+        <menu>
+            <item
+                android:icon="@color/zxing_transparent"
+                android:id="@+id/default_account"
+                android:title="@string/menuItem_default_account" />
+        </menu>
+    </item>
+
+    <item android:title="@string/menuItem_activity">
+        <menu>
+            <item
+                android:icon="@color/zxing_transparent"
+                android:id="@+id/requests"
+                android:title="@string/menuItem_requests" />
+        </menu>
+    </item>
+
+    <item android:title="@string/menuItem_security"  >
+        <menu>
+            <item
+                android:icon="@color/zxing_transparent"
+                android:id="@+id/backup_phrases"
+                android:title="@string/menuItem_backup_phrases" />
+            <item
+                android:id="@+id/export_key"
+                android:title="@string/menuItem_export_key" />
+            <item
+                android:id="@+id/enable_face_fingerprint"
+                android:title="@string/menuItem_enable_biometric" />
+            <item
+                android:id="@+id/enable_pin"
+                android:title="@string/menuItem_enable_pin" />
+        </menu>
+    </item>
+
+    <item android:title="@string/menuItem_network">
+        <menu>
+            <item
+                android:icon="@color/zxing_transparent"
+                android:id="@+id/nodes"
+                android:title="@string/menuItem_nodes" />
+            <item
+                android:id="@+id/synchronize_data"
+                android:title="@string/menuItem_synchronize_data" />
+        </menu>
+    </item>
+
+    <item android:title="@string/menuItem_about">
+        <menu>
+            <item
+                android:icon="@color/zxing_transparent"
+                android:id="@+id/profile"
+                android:title="@string/menuItem_profile" />
+            <item
+                android:id="@+id/app_info"
+                android:title="@string/menuItem_app_information" />
+        </menu>
+    </item>
+</menu>

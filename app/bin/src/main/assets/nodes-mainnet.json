@@ -1,0 +1,16 @@
+[
+	{
+		"host": "18.217.246.50",
+		"port": 50211,
+        "accountNum": 2,
+		"shardNum": 0,
+		"realmNum": 0
+	},
+ {
+ "host": "18.217.246.51",
+ "port": 50211,
+ "accountNum": 3,
+ "shardNum": 0,
+ "realmNum": 0
+ }
+]

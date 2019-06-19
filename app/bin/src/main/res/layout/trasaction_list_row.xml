@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    >
+
+    <TextView
+        android:id="@+id/text_positive_sign"
+        android:layout_width="10dp"
+        android:layout_height="3dp"
+        android:visibility="gone"
+        android:background="@color/positive"
+        android:layout_centerVertical="true">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_negative_sign"
+        android:visibility="gone"
+        android:layout_width="10dp"
+        android:layout_height="3dp"
+        android:background="@color/negative"
+        android:layout_centerVertical="true">
+
+    </TextView>
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/DateTimeRow"
+        android:layout_marginLeft="20dp"
+        android:visibility="visible"
+        android:text="@string/text_time"
+        />
+    <TextView
+        android:id="@+id/text_account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_time"
+        style="@style/PrimaryTextRow"
+        android:layout_marginLeft="20dp"
+        android:text="@string/text_default_account" />
+
+
+    <TextView
+        android:id="@+id/hgc_wallet_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_hgc_value"
+        android:layout_alignBaseline="@+id/text_account_name"
+        android:layout_alignBottom="@+id/text_account_name"
+        android:layout_alignParentRight="true"
+        style="@style/PrimaryTextRow" />
+
+    <TextView
+        android:id="@+id/hgc_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/hgc_wallet_text"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="1dp"
+        android:layout_toLeftOf="@+id/hgc_wallet_text"
+        android:text="@string/text_hgc_icon"
+        style="@style/PrimaryTextRow"
+        android:fontFamily="@font/styreneh_regular"
+        />
+
+    <TextView
+        android:id="@+id/text_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_account_name"
+        style="@style/SecondaryTextRow"
+        android:layout_marginLeft="20dp"
+        android:text="@string/text_key"
+        />
+
+    <TextView
+        android:id="@+id/dollor_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_hgc_value"
+        android:layout_below="@id/hgc_wallet_text"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/text_key"
+        style="@style/SecondaryTextRow" />
+
+    <View android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/text_key"
+        android:layout_marginTop="20dp"
+        android:background="@color/line_seperator_table_row"
+        />
+</RelativeLayout>

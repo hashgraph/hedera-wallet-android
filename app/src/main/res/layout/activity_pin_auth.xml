@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mine_shaft"
+    tools:context=".ui.auth.pin.PinAuthActivity">
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:layout_marginTop="120dp"/>
+
+    <TextView
+        android:id="@+id/text_hgc_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        android:textSize="80sp"
+        android:text="@string/text_hgc_icon"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/styreneh_regular"
+         />
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_hgc_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/text_welcome"
+        android:textColor="@color/white"
+        android:textSize="34sp" />
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:text="@string/text_enter_your_pin"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:text="@string/text_invalid_pin"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="14sp" />
+
+    <com.andrognito.pinlockview.IndicatorDots
+        android:id="@+id/indicator_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp" />
+
+    <com.andrognito.pinlockview.PinLockView
+        android:id="@+id/pin_lock_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/indicator_dots"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        app:keypadButtonSize="72dp"
+        app:keypadShowDeleteButton="true"
+        app:keypadTextColor="@color/white"
+        app:keypadTextSize="18dp" />
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<RelativeLayout
+    android:id="@+id/account_row_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="10dp"
+    android:layout_below="@+id/text_from"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_account_name"
+        android:fontFamily="@font/styrenea_regular"
+        android:textSize="14sp"
+        android:text="@string/text_default_account"/>
+
+    <TextView
+        android:id="@+id/text_public_key"
+        style="@style/CaptionText"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/text_account_name"
+        android:text="@string/text_key"/>
+
+    <TextView
+        android:id="@+id/text_change"
+        style="@style/HgcPayClickableTextView"
+        android:text="@string/text_change"/>
+</RelativeLayout>

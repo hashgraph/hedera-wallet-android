@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/light_grey_dark"
+    tools:context="opencrowd.hgc.hgcwallet.MainActivity">
+
+    <Button
+        android:id="@+id/new_wallet"
+        android:layout_width="wrap_content"
+        style="@style/HgcButton"
+        android:layout_above="@+id/text_or"
+        android:layout_alignEnd="@+id/restore_wallet"
+        android:paddingBottom="15dp"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:paddingTop="15dp"
+        android:text="@string/btn_text_create_new_wallet"
+        android:textColor="@color/gray" />
+    <TextView
+        android:id="@+id/text_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/text_or"
+        android:layout_margin="20dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/restore_wallet"
+        android:layout_width="wrap_content"
+        style="@style/HgcButton"
+        android:text="@string/btn_text_restore_wallet"
+        android:paddingRight="50dp"
+        android:paddingLeft="50dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_below="@+id/text_or"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+</LinearLayout>

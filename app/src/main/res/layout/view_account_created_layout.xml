@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/PageLayout"
+        android:orientation="vertical">
+        <include layout="@layout/title_bar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        >
+
+    <LinearLayout
+        style="@style/ContentLayout"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_nick_name"
+                style="@style/CaptionText"
+                android:layout_marginTop="10dp"
+                android:text="@string/text_account_name" />
+
+            <ImageView
+                android:id="@+id/image_copy_account_data"
+                style="@style/ImageviewCopy"
+                android:layout_alignBottom="@+id/text_nick_name"/>
+
+            <EditText
+                android:id="@+id/edittext_nick_name"
+                style="@style/EditTextSingleLineBox"
+                android:layout_below="@+id/text_nick_name"
+                android:layout_marginTop="5dp"
+                android:focusableInTouchMode="true" />
+
+        </RelativeLayout>
+    <TextView
+        android:id="@+id/text_account_id"
+        style="@style/CaptionText"
+        android:text="@string/text_account_id"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/edittext_account_id"
+        style="@style/EditTextSingleLineBox"
+        android:inputType="phone"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/text_nick_name"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/text_public_address"
+        style="@style/CaptionText"
+        android:text="@string/text_public_address"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/image_copy"
+        style="@style/ImageviewCopy"
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/text_public_address"/>
+
+    <TextView
+        android:id="@+id/textview_public_address"
+        style="@style/KeyTextView"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/text_public_address"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:id="@+id/text_private_key"
+        style="@style/CaptionText"
+        android:text="@string/text_private_key"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/text_display"
+        style="@style/CaptionText"
+        android:text="@string/text_display"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/text_private_key"/>
+
+        <TextView
+            android:id="@+id/text_hide"
+            style="@style/CaptionText"
+            android:text="@string/text_hide"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/text_private_key"/>
+
+    <TextView
+        android:id="@+id/textview_private_key"
+        style="@style/KeyTextView"
+        android:layout_marginTop="5dp"
+        android:text="@string/default_private_key"
+        android:layout_below="@+id/text_private_key"/>
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        style="@style/Checkbox"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="-6dp"
+        android:text="@string/checkbox_text_hidden"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/HgcButton"
+        android:layout_margin="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/background_button_hgc"
+        android:text="@string/btn_text_close" />
+
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

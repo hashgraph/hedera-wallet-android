@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="@color/background_title_bar"
+    >
+    <TextView
+        android:id="@+id/text_fee_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_time"
+        style="@style/PrimaryTextRow"
+        android:textStyle="bold"
+        android:text="@string/text_default_account"
+        />
+
+    <TextView
+        android:id="@+id/hgc_wallet_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_hgc_value"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/text_fee_name"
+        android:layout_alignBottom="@+id/text_fee_name"
+        android:layout_alignParentRight="true"
+        style="@style/PrimaryTextRow" />
+
+    <TextView
+        android:id="@+id/hgc_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/hgc_wallet_text"
+        android:layout_marginBottom="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_toLeftOf="@+id/hgc_wallet_text"
+        android:text="@string/text_hgc_currency_icon"
+        android:textStyle="bold"
+        style="@style/PrimaryTextRow"
+        />
+
+    <View android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/hgc_wallet_text"
+        android:layout_marginTop="20dp"
+        android:background="@color/border_box"
+        />
+</RelativeLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ContentLayout"
+    android:orientation="vertical">
+    <include layout="@layout/title_bar"/>
+
+    <TextView
+        android:id="@+id/text_nick_name"
+        android:text="@string/text_account_name"
+        android:layout_marginTop="10dp"
+        style="@style/CaptionText" />
+
+    <EditText
+        android:id="@+id/edittext_nick_name"
+        style="@style/EditTextSingleLineBox"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/text_nick_name"/>
+
+    <CheckBox
+        android:id="@+id/hidden"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="-5dp"
+        android:text="@string/checkbox_text_hidden"
+        android:visibility="gone"
+        style="@style/Checkbox"
+        />
+
+    <LinearLayout
+        android:id="@+id/btn_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            style="@style/HgcButton"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/background_button_hgc"
+            android:text="@string/btn_text_cancel" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/background_button_hgc"
+            style="@style/HgcButton"
+            android:text="@string/add"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alert_linearlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_button_hgc"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_signature_algoritms"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="10dp"
+        android:padding="15dp"/>
+
+    <Button
+        android:id="@+id/btn_ed2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_ED25519"
+        android:textAlignment="center"
+        android:padding="20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal|center"
+        android:background="@drawable/button_boundary_radius_low"/>
+
+    <Button
+        android:id="@+id/btn_edcsa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_EC384"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"
+        android:padding="20dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_boundary_radius_low"
+        android:layout_gravity="center_horizontal|center" />
+
+
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="15sp"
+        android:text="@string/text_dismiss"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:background="@drawable/button_boundary_radius_low"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

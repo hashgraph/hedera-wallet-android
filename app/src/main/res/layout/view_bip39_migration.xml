@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_page_content"
+    android:orientation="vertical">
+    <include layout="@layout/title_bar" />
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_page_content"
+        android:layout_marginRight="@dimen/margin_page_content">
+
+
+        <TextView
+            android:id="@+id/text_new_wallet_description"
+            android:layout_width="match_parent"
+            style="@style/OnboardingParagraph"
+            android:layout_centerHorizontal="true"
+            android:text="@string/bip39_migration_page_message"
+             />
+
+        <TextView
+            android:id="@+id/textview_crptowords"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/text_new_wallet_description"
+            android:text="@string/text_textview"
+            style="@style/TextviewWalletKeywords"
+            />
+
+        <LinearLayout
+            android:id="@+id/btn_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:weightSum="2">
+
+
+
+        <Button
+            android:id="@+id/btn_copy"
+            android:layout_width="0dp"
+            style="@style/HgcButton"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/background_button_hgc"
+            android:text="@string/btn_text_copy" />
+
+        <Button
+            android:id="@+id/btn_done"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            style="@style/HgcButton"
+            android:text="@string/btn_text_done"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

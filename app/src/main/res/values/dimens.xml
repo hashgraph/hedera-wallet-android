@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="font_regular_very_small">10sp</dimen>
+    <dimen name="font_regular_small">11sp</dimen>
+    <dimen name="font_regular_medium">12sp</dimen>
+    <dimen name="font_regular_large">13sp</dimen>
+    <dimen name="font_regular_very_large">14sp</dimen>
+    <dimen name="font_light_very_small">10sp</dimen>
+    <dimen name="font_light_small">11sp</dimen>
+    <dimen name="font_light_medium">12sp</dimen>
+    <dimen name="font_light_large">13sp</dimen>
+    <dimen name="font_light_very_large">14sp</dimen>
+    <dimen name="font_regular_large_size">15sp</dimen>
+
+    <dimen name="font_hgc_amount_very_large">36sp</dimen>
+    <dimen name="font_usd_amount_very_large">17sp</dimen>
+    <dimen name="font_hgc_symbol_very_large">17sp</dimen>
+
+    <dimen name="font_toolbar_title">17sp</dimen>
+
+    <dimen name="height_button_hgc">46dp</dimen>
+    <dimen name="corner_radius_hgc_button">23dp</dimen>
+    <dimen name="height_button_hgc_solid">30dp</dimen>
+    <dimen name="height_button_hgc_solid_request">35dp</dimen>
+    <dimen name="corner_radius_hgc_solid_button">15dp</dimen>
+    <dimen name="width_border_button">2dp</dimen>
+    <dimen name="width_border_box">1dp</dimen>
+
+    <dimen name="height_title_bar">44dp</dimen>
+    <dimen name="height_top_bar">44dp</dimen>
+    <dimen name="margin_page_content">20dp</dimen>
+
+    <dimen name="drawable_icon_size">8dp</dimen>
+    //This property is used to change the size of navigationView icon across app
+    <dimen name="design_navigation_icon_size" tools:override="true">2dp</dimen>
+
+
+</resources>

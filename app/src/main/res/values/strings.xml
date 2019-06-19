@@ -1,0 +1,178 @@
+<resources>
+    <string name="app_name">Hedera Wallet</string>
+
+    <string name="message_create_new_wallet">Like a password, this backup phrase is the only way to recover a Hedera Wallet. Save the backup phrases to recover your Hedera Wallet if it is deleted, lost, or you get a new phone. It is recommended to also save your accountID along with these 24 words.</string>
+    <string name="message_restore_wallet">Enter, in order, the 22 or 24 words you were given when you created your previous wallet account. You will be prompted to enter the account id in next step.</string>
+    <string name="message_restore_accountid">If you already know the account number enter here or visit <a href="https://help.hedera.com/hc/en-us/articles/360000714658">hedera portal</a> to get it. You can skip this step and change it later in Accounts menu.</string>
+    <string name="bip39_migration_warning_message">Your old backup-phrase is being replaced with a new 24-word equivalent. Tap here to see that phrase - Make sure you keep a record.</string>
+    <string name="bip39_migration_page_message">Your 22 words passphrase is deprecated and will not be supported in future wallet. Please save this new backup phrases to recover your Hedera Wallet</string>
+
+    <string name="default_private_key">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+    <string name="copy_data_clipboard_message">Address copied to clipboard"</string>
+    <string name="copy_data_clipboard_account_id">Address copied to clipboard"</string>
+    <string name="copy_data_clipboard_account_data">Your account info is copied successfully"</string>
+    <string name="copy_data_clipboard_passphrase">Backup phrase copied to clipboard"</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="fingerprint_description">Confirm fingerprint to continue</string>
+    <string name="fingerprint_hint">Touch sensor</string>
+    <string name="fingerprint_not_recognized">Fingerprint not recognized. Try again</string>
+    <string name="fingerprint_success">Fingerprint recognized</string>
+    <string name="new_fingerprint_enrolled_description">A new fingerprint was added to this device, so your password is required.</string>
+    <string name="use_fingerprint_in_future">Use fingerprint in the future</string>
+    <string name="use_fingerprint_to_authenticate_title">Use fingerprint to authenticate</string>
+    <string name="use_fingerprint_to_authenticate_key">use_fingerprint_to_authenticate_key</string>
+    <string name="description_fingerprint_icon">Fingerprint icon</string>
+    <string name="verify_alias">PLEASE CONFIRM THAT THE PROVIDED NAME MATCHES ACCOUNT ADDRESS</string>
+
+    <string name="text_default_account">Default Account</string>
+    <string name="text_hgc_value">0.000</string>
+    <string name="text_hgc_icon">H</string>
+    <string name="text_hgc_currency_icon">"\u210f"</string>
+    <string name="text_key_short">Ending in...%1$s</string>
+    <string name="text_last_updated">Last updated %1$s</string>
+    <string name="text_last_updated_placeholder">Last updated 10/10/2019</string>
+
+    <string name="text_key_short_placeholder">Ending in...4a19a7</string>
+    <string name="text_request">REQUESTS</string>
+    <string name="text_accounts">ACCOUNTS</string>
+    <string name="text_settings">SETTINGS</string>
+    <string name="text_welcome">Welcome</string>
+    <string name="text_enter_your_pin">Enter your PIN</string>
+    <string name="text_invalid_pin">Invalid PIN, please try again</string>
+    <string name="text_get_started_with_hgc">Get Started on Hedera</string>
+    <string name="text_account">Account</string>
+    <string name="text_unverified">unverified</string>
+    <string name="text_account_id_value">0.0.9</string>
+    <string name="text_signature_algoritms">Signature Algorithms</string>
+    <string name="text_ED25519">ED25519</string>
+    <string name="text_EC384">EC384</string>
+    <string name="text_dismiss">Dismiss</string>
+    <string name="text_textview">TextView</string>
+    <string name="text_node">35.170.13.208:50211</string>
+    <string name="text_or">OR</string>
+    <string name="text_notes">NOTES</string>
+    <string name="text_time">2 minute ago</string>
+    <string name="text_change">CHANGE</string>
+    <string name="text_account_name">ACCOUNT NAME</string>
+    <string name="text_public_address">PUBLIC KEY</string>
+    <string name="text_private_key">PRIVATE KEY</string>
+    <string name="text_hide">HIDE</string>
+    <string name="text_display">DISPLAY</string>
+    <string name="text_hgc_wallet">Hedera Wallet</string>
+    <string name="text_version">Version 1.0</string>
+    <string name="text_build">Build 1</string>
+    <string name="text_account_id">ACCOUNT ID</string>
+    <string name="text_dollor_icon">$</string>
+    <string name="text_no_transactions">No Transactions</string>
+    <string name="text_from">FROM</string>
+    <string name="text_to">TO</string>
+    <string name="text_amount">AMOUNT</string>
+    <string name="text_fee">FEE</string>
+    <string name="text_note">NOTE</string>
+    <string name="text_profile">PROFILE</string>
+    <string name="text_name">NAME</string>
+    <string name="text_notifications">NOTIFICATIONS</string>
+    <string name="text_verify">VERIFY</string>
+
+    <string name="btn_text_email">Email</string>
+    <string name="btn_text_copy">Copy</string>
+    <string name="btn_text_done">Done</string>
+    <string name="btn_text_accept">Accept</string>
+    <string name="btn_text_create_new_wallet">CREATE NEW WALLET</string>
+    <string name="btn_text_restore_wallet">RESTORE EXISTING WALLET</string>
+    <string name="btn_text_confirm">CONFIRM</string>
+    <string name="btn_text_request">REQUEST</string>
+    <string name="btn_text_pay">PAY</string>
+    <string name="btn_text_terms">TERMS</string>
+    <string name="btn_text_privacy_policy">PRIVACY POLICY</string>
+    <string name="btn_text_close">close</string>
+    <string name="btn_text_cancel">CANCEL</string>
+    <string name="btn_text_save">SAVE</string>
+    <string name="btn_text_skip">SKIP</string>
+    <string name="btn_text_existing">EXISTING</string>
+    <string name="btn_text_new">NEW</string>
+    <string name="btn_text_fingerprint">Enable fingerprint</string>
+    <string name="btn_text_setup_pin">setup 4 digit password</string>
+    <string name="btn_text_qr">QR</string>
+    <string name="btn_text_send">SEND</string>
+    <string name="btn_text_restore">RESTORE</string>
+    <string name="btn_text_next">NEXT</string>
+
+    <string name="checkbox_text_hidden">HIDDEN</string>
+    <string name="checkbox_text_active">Active</string>
+    <string name="checkbox_request_notification">REQUEST NOTIFICATION</string>
+    <string name="checkbox_add_note">ADD NOTE</string>
+
+    <string name="edittext_hint_host">Host e.g. 100.31.255.63</string>
+    <string name="edittext_hint_port">Port e.g. 52011</string>
+    <string name="edittext_hint_account_id">AccountID e.g. 0.0.2</string>
+
+    <string name="radio_text_enable_fingerprint">ENABLE FINGERPRINT LOGIN</string>
+    <string name="radio_text_enable_pin_login">ENABLE PIN LOGIN</string>
+    <string name="radio_text_payment_confirmations">PAYMENT CONFIRMATIONS</string>
+    <string name="radio_text_receive_funds">RECEIVE FUNDS</string>
+
+    <string name="text_account_not_linked">Account is not linked</string>
+    <string name="transaction_submitted_successfully">Transaction submitted successfully</string>
+    <string name="invalid_account_id">INVALID ACCOUNT ID</string>
+    <string name="failed_to_fetch_balances">Failed to fetch balances</string>
+    <string name="failed_to_fetch_records">Failed to fetch transaction records</string>
+
+    <string name="wallet_restored">Wallet restored</string>
+    <string name="invalid_phrase">Invalid Phrase</string>
+    <string name="hbar">HBAR</string>
+    <string name="scan_qr">SCAN QR</string>
+    <string name="add">ADD</string>
+    <string name="backup_your_wallet">Back up Your Wallet</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="create_pin">Create PIN</string>
+    <string name="restore_wallet_account">Restore Wallet Account</string>
+    <string name="restore_accountid_title">Entet Account ID</string>
+
+    <string name="host">Host</string>
+    <string name="port">Port</string>
+    <string name="accountID">AccountID</string>
+    <string name="biometric_already_enabled_msg">You have already enabled Fingerprint ID</string>
+
+    <!--Drawer Menu Items-->
+    <string name="menuItem_default_account">Default Account</string>
+    <string name="menuItem_other_user_account">Other User Account</string>
+    <string name="menuItem_requests">Requests</string>
+    <string name="menuItem_accounts">Accounts</string>
+    <string name="menuItem_activity">Activity</string>
+
+    <string name="menuItem_security">Security</string>
+    <string name="menuItem_backup_phrases">Backup Phrases</string>
+    <string name="menuItem_export_key">Export Key</string>
+    <string name="menuItem_enable_biometric">Enable Fingerprint ID</string>
+    <string name="menuItem_enable_pin">Enable PIN</string>
+    <string name="menuItem_change_pin">Change PIN</string>
+    <string name="menuItem_network">Network</string>
+    <string name="menuItem_nodes">Nodes</string>
+    <string name="menuItem_synchronize_data">Synchronize Data</string>
+    <string name="menuItem_about">About</string>
+    <string name="menuItem_profile">Profile</string>
+    <string name="menuItem_app_information">App Information</string>
+
+
+    <string name="text_term">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+    <string name="title_activity_export_key">ExportKeyActivity</string>
+    <string name="export_key_not_wifi_msg">Please connect to WIFI and try again</string>
+    <string name="invalid_qr_code">Invalid QR-Code</string>
+    <string name="failed_scan_qr_code">Failed to scan QR-Code</string>
+    <string name="text_todo">TODO</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="placeholder_name_optional">name (optional)</string>
+    <string name="placeholder_account_id">e.g. 0.0.12</string>
+
+    <string name="export_key_pin">PIN</string>
+    <string name="qr_scan_instruction">Place a QRcode inside the rectangle</string>
+    <string name="warning">Warning</string>
+    <string name="warning_query_cost">Fetching balance will cost you hbars. Do you want to proceed?</string>
+
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_page_content"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/title_bar"/>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_page_content"
+        android:layout_marginLeft="@dimen/margin_page_content">
+
+
+        <TextView
+            android:id="@+id/text_new_wallet_description"
+            android:layout_width="wrap_content"
+            style="@style/OnboardingParagraph"
+            android:text="@string/message_restore_wallet"
+            android:layout_centerHorizontal="true" />
+
+
+        <EditText
+            android:id="@+id/edittext_restore"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/text_new_wallet_description"
+            style="@style/RestoreWalletTextView"
+            android:gravity="top|left"
+            android:layout_marginBottom="20dp"
+            android:maxLines="10"/>
+
+        <Button
+            android:id="@+id/btn_restore"
+            android:layout_width="wrap_content"
+            style="@style/HgcButton"
+            android:layout_below="@+id/edittext_restore"
+            android:layout_centerHorizontal="true"
+            android:text="@string/btn_text_next"
+            />
+
+    </RelativeLayout>
+</ScrollView>
+</LinearLayout>

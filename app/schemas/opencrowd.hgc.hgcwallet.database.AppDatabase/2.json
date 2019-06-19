@@ -1,0 +1,423 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "1cbe01b2695af3458ee608decea79492",
+    "entities": [
+      {
+        "tableName": "Wallet",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`walletId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `totalAccounts` INTEGER NOT NULL, `keyType` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "walletId",
+            "columnName": "walletId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalAccounts",
+            "columnName": "totalAccounts",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "keyType",
+            "columnName": "keyType",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "walletId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Account",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`walletId` INTEGER NOT NULL, `keyType` TEXT NOT NULL, `accountIndex` INTEGER NOT NULL, `name` TEXT NOT NULL, `balance` INTEGER NOT NULL, `lastBalanceCheck` INTEGER, `realmNum` INTEGER NOT NULL, `shardNum` INTEGER NOT NULL, `accountNum` INTEGER NOT NULL, `isArchived` INTEGER NOT NULL, `isHidden` INTEGER NOT NULL, PRIMARY KEY(`accountIndex`), FOREIGN KEY(`walletId`) REFERENCES `Wallet`(`walletId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "walletId",
+            "columnName": "walletId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "keyType",
+            "columnName": "keyType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accountIndex",
+            "columnName": "accountIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "balance",
+            "columnName": "balance",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastBalanceCheck",
+            "columnName": "lastBalanceCheck",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "realmNum",
+            "columnName": "realmNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shardNum",
+            "columnName": "shardNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accountNum",
+            "columnName": "accountNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isArchived",
+            "columnName": "isArchived",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isHidden",
+            "columnName": "isHidden",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "accountIndex"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_Account_accountIndex",
+            "unique": false,
+            "columnNames": [
+              "accountIndex"
+            ],
+            "createSql": "CREATE  INDEX `index_Account_accountIndex` ON `${TABLE_NAME}` (`accountIndex`)"
+          },
+          {
+            "name": "index_Account_walletId",
+            "unique": false,
+            "columnNames": [
+              "walletId"
+            ],
+            "createSql": "CREATE  INDEX `index_Account_walletId` ON `${TABLE_NAME}` (`walletId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Wallet",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "walletId"
+            ],
+            "referencedColumns": [
+              "walletId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Contact",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountId` TEXT NOT NULL, `name` TEXT, `isVerified` INTEGER NOT NULL, PRIMARY KEY(`accountId`))",
+        "fields": [
+          {
+            "fieldPath": "accountId",
+            "columnName": "accountId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isVerified",
+            "columnName": "isVerified",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "accountId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "PayRequest",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`requestId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `accountId` TEXT NOT NULL, `name` TEXT, `notes` TEXT, `amount` INTEGER NOT NULL, `importDate` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "requestId",
+            "columnName": "requestId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accountId",
+            "columnName": "accountId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "importDate",
+            "columnName": "importDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "requestId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TxnRecord",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`txnId` TEXT NOT NULL, `fromAccId` TEXT, `toAccId` TEXT, `createdDate` INTEGER, `txn` BLOB, `receipt` BLOB, `record` BLOB, PRIMARY KEY(`txnId`))",
+        "fields": [
+          {
+            "fieldPath": "txnId",
+            "columnName": "txnId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fromAccId",
+            "columnName": "fromAccId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "toAccId",
+            "columnName": "toAccId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdDate",
+            "columnName": "createdDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "txn",
+            "columnName": "txn",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "receipt",
+            "columnName": "receipt",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "record",
+            "columnName": "record",
+            "affinity": "BLOB",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "txnId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SmartContract",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountIndex` INTEGER NOT NULL, `balance` INTEGER NOT NULL, `contractID` TEXT NOT NULL, `name` TEXT, `symbol` TEXT, `decimals` INTEGER NOT NULL, PRIMARY KEY(`accountIndex`, `contractID`), FOREIGN KEY(`accountIndex`) REFERENCES `Account`(`accountIndex`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "accountIndex",
+            "columnName": "accountIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "balance",
+            "columnName": "balance",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contractID",
+            "columnName": "contractID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "symbol",
+            "columnName": "symbol",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "decimals",
+            "columnName": "decimals",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "accountIndex",
+            "contractID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Account",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "accountIndex"
+            ],
+            "referencedColumns": [
+              "accountIndex"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Node",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nodeId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `realmNum` INTEGER NOT NULL, `shardNum` INTEGER NOT NULL, `accountNum` INTEGER NOT NULL, `host` TEXT, `port` INTEGER NOT NULL, `status` TEXT, `lastCheckAt` INTEGER, `disabled` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "nodeId",
+            "columnName": "nodeId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "realmNum",
+            "columnName": "realmNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shardNum",
+            "columnName": "shardNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accountNum",
+            "columnName": "accountNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "host",
+            "columnName": "host",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "port",
+            "columnName": "port",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastCheckAt",
+            "columnName": "lastCheckAt",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "disabled",
+            "columnName": "disabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nodeId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"1cbe01b2695af3458ee608decea79492\")"
+    ]
+  }
+}

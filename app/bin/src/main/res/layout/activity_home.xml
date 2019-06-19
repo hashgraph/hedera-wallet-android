@@ -1,0 +1,116 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    style="@style/PageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <include
+        android:id="@+id/app_header"
+        layout="@layout/app_header_layout"/>
+
+
+    <com.wealthfront.magellan.ScreenContainer
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/magellan_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_header"
+        android:layout_above="@+id/bootom_linear_layout"
+        />
+
+    <LinearLayout
+        android:id="@+id/bootom_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_grey_dark"
+        android:weightSum="60"
+        >
+
+        <TextView
+            android:id="@+id/request"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="19.9"
+            android:drawablePadding="5dp"
+            android:text="@string/text_request"
+            android:textSize="12sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:drawableTop="@drawable/ic_requests"
+            android:gravity="center"
+            android:fontFamily="@font/styrenea_regular"
+            />
+
+        <View android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.2"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="19.9"
+            android:drawablePadding="5dp"
+            android:text="@string/text_accounts"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:fontFamily="@font/styrenea_regular"
+            android:drawableTop="@drawable/ic_accounts"
+            />
+        <View android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.2"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            />
+        <TextView
+            android:id="@+id/settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="19.8"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:fontFamily="@font/styrenea_regular"
+            android:drawableTop="@drawable/ic_settings"
+            android:text="@string/text_settings"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view2"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_menu_right"
+        android:background="@color/background_drawer"
+        app:itemTextColor="@color/text_drawer_menu"
+        android:paddingLeft="20dp"
+        app:itemBackground="@drawable/drawer_item_bg"
+        />
+</android.support.v4.widget.DrawerLayout>

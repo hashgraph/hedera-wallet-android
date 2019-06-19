@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/text_hgc_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hbar"
+        android:padding="10dp"
+        android:textColor="@color/text_primary"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/styrenea_regular"
+        android:textSize="17sp"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/text_hgc_value"
+        android:layout_marginTop="5dp"
+        android:background="@color/line_seperator_table_row"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/ll_hgc_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/text_hgc_value"
+        >
+
+        <TextView
+            android:id="@+id/hgc_wallet_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_hgc_value"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/styrenea_regular"
+            android:textSize="22sp"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_cancel_dialog"
+        style="@style/HgcButton"
+        android:layout_below="@+id/ll_hgc_value"
+        android:layout_width="wrap_content"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_page_content"
+        android:layout_marginTop="@dimen/margin_page_content"
+        android:text="@string/text_dismiss"
+        android:textAllCaps="false"
+        android:visibility="visible"
+        android:textColor="@color/text_button_primary" />
+
+</RelativeLayout>

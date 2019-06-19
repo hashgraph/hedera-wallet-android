@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">HGCWallet</string>
+
+    <string name="message_create_new_wallet">It is important that you record the following backup phrase in case you have to recover your wallet for any reason</string>
+    <string name="message_restore_wallet">Word must be entered in the same order as they were shown in the backup</string>
+    <string name="default_private_key">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+    <string name="copy_data_clipboard_message">Address Copied to Clipboard"</string>
+    <string name="copy_data_clipboard_account_id">Address Copied to Clipboard"</string>
+    <string name="copy_data_clipboard_account_data">Your account info is copied successfully"</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="fingerprint_description">Confirm fingerprint to continue</string>
+    <string name="fingerprint_hint">Touch sensor</string>
+    <string name="fingerprint_not_recognized">Fingerprint not recognized. Try again</string>
+    <string name="fingerprint_success">Fingerprint recognized</string>
+    <string name="new_fingerprint_enrolled_description">A new fingerprint was added to this device, so your password is required.</string>
+    <string name="use_fingerprint_in_future">Use fingerprint in the future</string>
+    <string name="use_fingerprint_to_authenticate_title">Use fingerprint to authenticate</string>
+    <string name="use_fingerprint_to_authenticate_key">use_fingerprint_to_authenticate_key</string>
+    <string name="description_fingerprint_icon">Fingerprint icon</string>
+    <string name="verify_alias">PLEASE CONFIRM THAT THE PROVIDED NAME MATCHES ACCOUNT ADDRESS</string>
+
+    <string name="text_default_account">Default Account</string>
+    <string name="text_hgc_value">0.000</string>
+    <string name="text_hgc_icon">H</string>
+    <string name="text_key">Ending in...4a19a7</string>
+    <string name="text_request">REQUESTS</string>
+    <string name="text_accounts">ACCOUNTS</string>
+    <string name="text_settings">SETTINGS</string>
+    <string name="text_welcome">Welcome</string>
+    <string name="text_enter_your_pin">Enter your PIN</string>
+    <string name="text_invalid_pin">Invalid PIN, please try again</string>
+    <string name="text_get_started_with_hgc">Get Started with HGC</string>
+    <string name="text_account">Account</string>
+    <string name="text_unverified">unverified</string>
+    <string name="text_account_id_value">0.0.9</string>
+    <string name="text_signature_algoritms">Signature Algorithms</string>
+    <string name="text_ED25519">ED25519</string>
+    <string name="text_EC384">EC384</string>
+    <string name="text_dismiss">Dismiss</string>
+    <string name="text_textview">TextView</string>
+    <string name="text_node">35.170.13.208:50211</string>
+    <string name="text_or">OR</string>
+    <string name="text_notes">NOTES</string>
+    <string name="text_time">2 minute ago</string>
+    <string name="text_change">CHANGE</string>
+    <string name="text_nickname">NICKNAME</string>
+    <string name="text_public_address">PUBLIC ADDRESS</string>
+    <string name="text_private_key">PRIVATE KEY</string>
+    <string name="text_hide">HIDE</string>
+    <string name="text_display">DISPLAY</string>
+    <string name="text_hgc_wallet">HGC WALLET</string>
+    <string name="text_version">Version 1.0</string>
+    <string name="text_build">Build 1</string>
+    <string name="text_account_id">ACCOUNT ID</string>
+    <string name="text_dollor_icon">$</string>
+    <string name="text_no_transactions">No Transactions</string>
+    <string name="text_from">FROM</string>
+    <string name="text_to">TO</string>
+    <string name="text_amount">AMOUNT</string>
+    <string name="text_fee">FEE</string>
+    <string name="text_note">NOTE</string>
+    <string name="text_profile">PROFILE</string>
+    <string name="text_name">NAME</string>
+    <string name="text_notifications">NOTIFICATIONS</string>
+    <string name="text_verify">VERIFY</string>
+
+    <string name="btn_text_email">Email</string>
+    <string name="btn_text_done">Done</string>
+    <string name="btn_text_accept">Accept</string>
+    <string name="btn_text_create_new_wallet">CREATE NEW WALLET</string>
+    <string name="btn_text_restore_wallet">RESTORE EXISTING WALLET</string>
+    <string name="btn_text_confirm">CONFIRM</string>
+    <string name="btn_text_request">REQUEST</string>
+    <string name="btn_text_pay">PAY</string>
+    <string name="btn_text_terms">TERMS</string>
+    <string name="btn_text_privacy_policy">PRIVACY POLICY</string>
+    <string name="btn_text_close">close</string>
+    <string name="btn_text_cancel">CANCEL</string>
+    <string name="btn_text_save">SAVE</string>
+    <string name="btn_text_existing">EXISTING</string>
+    <string name="btn_text_new">NEW</string>
+    <string name="btn_text_scan">SCAN</string>
+    <string name="btn_text_fingerprint">Enable fingerprint</string>
+    <string name="btn_text_setup_pin">setup 4 digit password</string>
+    <string name="btn_text_qr">QR</string>
+    <string name="btn_text_send">SEND</string>
+    <string name="btn_text_restore">RESTORE</string>
+
+    <string name="checkbox_text_hidden">HIDDEN</string>
+    <string name="checkbox_text_active">Active</string>
+    <string name="checkbox_request_notification">REQUEST NOTIFICATION</string>
+    <string name="checkbox_add_note">ADD NOTE</string>
+
+    <string name="edittext_hint_host">Host e.g. 100.31.255.63</string>
+    <string name="edittext_hint_port">Port e.g. 52011</string>
+    <string name="edittext_hint_account_id">AccountID e.g. 0.0.2</string>
+
+    <string name="radio_text_enable_fingerprint">ENABLE FINGERPRINT LOGIN</string>
+    <string name="radio_text_enable_pin_login">ENABLE PIN LOGIN</string>
+    <string name="radio_text_payment_confirmations">PAYMENT CONFIRMATIONS</string>
+    <string name="radio_text_receive_funds">RECEIVE FUNDS</string>
+
+    <string name="text_account_not_linked">Account is not linked</string>
+    <string name="transaction_submitted_successfully">Transaction submitted successfully</string>
+    <string name="invalid_account_id">INVALID ACCOUNT ID</string>
+    <string name="failed_to_fetch_balances">Failed to fetch balances</string>
+    <string name="failed_to_fetch_records">Failed to fetch transaction records</string>
+
+    <string name="wallet_restored">Wallet restored</string>
+    <string name="invalid_phrase">Invalid Phrase</string>
+
+
+
+    <string name="text_term">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_page_content"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/hgc_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_hgc_icon"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/styreneh_regular"
+            android:textSize="17sp"/>
+
+        <TextView
+        android:id="@+id/hgc_wallet_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_hgc_value"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/styrenea_regular"
+        android:textSize="36sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dollor_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_hgc_value"
+        android:layout_marginTop="-10dp"
+        android:layout_gravity="center"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/styrenea_regular"
+        android:textSize="17sp"/>
+
+
+    <LinearLayout
+        android:id="@+id/btn_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:weightSum="2">
+
+
+
+        <Button
+            android:id="@+id/btn_request"
+            android:layout_width="0dp"
+            style="@style/HgcButton"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/background_button_hgc"
+            android:text="@string/btn_text_request"
+            android:textColor="@color/positive"/>
+
+        <Button
+            android:id="@+id/btn_pay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            style="@style/HgcButton"
+            android:textColor="@color/negative"
+            android:text="@string/btn_text_pay"/>
+    </LinearLayout>
+</LinearLayout>

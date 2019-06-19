@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000</color>
+    <color name="colorPrimaryDark">@color/background_page_content</color>
+    <color name="colorAccent">#F6F6F6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#6b6b6b</color>
+    <color name="light_grey_dark">#F6F6F6</color>
+
+    <color name="negative">#F15A31</color>
+    <color name="positive">#0EE78E</color>
+    <color name="tint">#00AEEF</color>
+    <color name="tint_selected">@color/tint</color>
+    <color name="line_seperator_table_row">#F1F1F2</color>
+    <color name="border_box">#E5E5E5</color>
+    <color name="border_button">#77787B</color>
+    
+    <color name="background_side_menu">#4D4D4F</color>
+    <color name="background_page_content">#FAFAFB</color>
+    <color name="background_page">#FFFFFF</color>
+    <color name="background_top_bar">#FFFFFF</color>
+    <color name="background_title_bar">@color/background_page_content</color>
+    <color name="background_tab_bar">#F7F7F8</color>
+    <color name="background_status_bar">@color/background_tab_bar</color>
+    <color name="background_button_solid">#77787B</color>
+    <color name="background_button_solid_disabled">#8877787B</color>
+    <color name="background_drawer">#555555</color>
+
+    <color name="text_primary">#3D3D3F</color>
+    <color name="text_secondary">#8D8F92</color>
+    <color name="text_hint_dark">#AAA</color>
+    <color name="text_very_dark">#4D4D4F</color>
+    <color name="text_button_primary">@color/positive</color>
+    <color name="text_button_destructive">@color/negative</color>
+    <color name="text_button_default">#77787B</color>
+    <color name="text_drawer_menu">#909090</color>
+    <color name="text_light">#9D9FA2</color>
+
+    <color name="warning_color">#f4511e</color>
+    <color name="hint_color">#42000000</color>
+    <color name="success_color">#009688</color>
+
+</resources>

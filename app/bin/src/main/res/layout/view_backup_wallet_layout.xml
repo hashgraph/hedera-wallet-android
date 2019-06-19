@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_page_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_page_content"
+        android:layout_marginRight="@dimen/margin_page_content">
+
+
+        <TextView
+            android:id="@+id/text_backup_wallet_description"
+            android:layout_width="match_parent"
+            style="@style/OnboardingParagraph"
+            android:layout_centerHorizontal="true"
+            android:text="@string/message_create_new_wallet"
+            android:textSize="@dimen/font_regular_very_large"
+            android:textColor="@color/text_primary"
+
+            />
+
+        <TextView
+            android:id="@+id/textview_crptowords"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/text_backup_wallet_description"
+            android:text="@string/text_textview"
+            style="@style/TextviewWalletKeywords"
+            />
+
+
+            <Button
+                android:id="@+id/btn_email"
+                android:layout_width="wrap_content"
+                style="@style/HgcButton"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/background_button_hgc"
+                android:text="@string/btn_text_email"
+                android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+</LinearLayout>
