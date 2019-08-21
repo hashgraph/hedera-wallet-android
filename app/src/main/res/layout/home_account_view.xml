@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:background="@color/background_page_content"
     android:orientation="vertical">
-    <include layout="@layout/title_bar"/>
+
+    <include layout="@layout/title_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,31 +13,31 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/hgc_wallet_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_hgc_value"
-            android:maxLines="1"
             android:autoSizeMinTextSize="10sp"
             android:autoSizeTextType="uniform"
-            android:textColor="@color/text_primary"
             android:fontFamily="@font/styrenea_regular"
-            android:textSize="36sp"/>
+            android:maxLines="1"
+            android:text="@string/text_hgc_value"
+            android:textColor="@color/text_primary"
+            android:textSize="36sp" />
+
         <TextView
             android:id="@+id/hgc_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_hgc_currency_icon"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="5dp"
             android:layout_marginLeft="2dp"
-            android:textColor="@color/text_primary"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/styreneh_regular"
-            android:textSize="17sp"/>
+            android:text="@string/text_hgc_currency_icon"
+            android:textColor="@color/text_primary"
+            android:textSize="17sp" />
 
     </LinearLayout>
 
@@ -44,53 +45,76 @@
         android:id="@+id/dollor_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_hgc_value"
-        android:layout_marginTop="-10dp"
         android:layout_gravity="center"
-        android:textColor="@color/text_primary"
+        android:layout_marginTop="-10dp"
         android:fontFamily="@font/styrenea_regular"
-        android:textSize="17sp"/>
+        android:text="@string/text_hgc_value"
+        android:textColor="@color/text_primary"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/last_check_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_last_updated_placeholder"
-        android:layout_marginTop="2dp"
         android:layout_gravity="center"
-        android:textColor="@color/text_secondary"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/styrenea_light"
-        android:textSize="@dimen/font_light_small"/>
+        android:text="@string/text_last_updated_placeholder"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/font_light_small" />
 
     <LinearLayout
-        android:id="@+id/btn_linear_layout"
+        android:id="@+id/layout_btn_account_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         android:weightSum="2">
 
         <Button
             android:id="@+id/btn_request"
-            android:layout_width="0dp"
             style="@style/HgcButton"
-            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_weight="1"
             android:background="@drawable/background_button_hgc"
             android:text="@string/btn_text_request"
-            android:textColor="@color/positive"/>
+            android:textColor="@color/positive"
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/btn_pay"
+            style="@style/HgcButton"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            style="@style/HgcButton"
+            android:layout_weight="1"
+            android:text="@string/btn_text_pay"
             android:textColor="@color/negative"
-            android:text="@string/btn_text_pay"/>
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_btn_no_account_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_request_create_account"
+            style="@style/HgcButton"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/btn_text_request_account_create"
+            android:textColor="@color/positive" />
     </LinearLayout>
 </LinearLayout>

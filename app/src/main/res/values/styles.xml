@@ -71,16 +71,19 @@
         <item name="android:fontFamily">@font/styrenea_light</item>
     </style>
 
-    <style name="EditTextSingleLineBox">
+    <style name="EditTextSingleLineBox" parent="EditTextMultiLineBox">
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="EditTextMultiLineBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/font_light_large</item>
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textColorHint">@color/text_hint_dark</item>
         <item name="android:background">@drawable/user_inform_edittext_background</item>
-        <item name="android:lines">1</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:padding">5dp</item>
+        <item name="android:padding">10dp</item>
         <item name="android:textCursorDrawable">@drawable/edittext_cursor_view</item>
 
     </style>
@@ -118,7 +121,7 @@
         <item name="android:textSize">@dimen/font_light_medium</item>
         <item name="android:textColor">@color/text_secondary</item>
         <item name="android:background">@drawable/user_inform_edittext_background</item>
-        <item name="android:padding">5dp</item>
+        <item name="android:padding">10dp</item>
     </style>
 
     <style name="RestoreWalletTextView">
@@ -246,14 +249,15 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/font_light_very_large</item>
         <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/hint_color</item>
         <item name="android:background">@drawable/user_inform_edittext_background</item>
         <item name="android:lines">1</item>
         <item name="android:maxLines">1</item>
         <item name="android:inputType">phone</item>
         <item name="android:textCursorDrawable">@drawable/edittext_cursor_view</item>
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingRight">5dp</item>
-        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">10dp</item>
     </style>
 
     <style name="TextViewInsideAmountEditText">
@@ -271,8 +275,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@color/white</item>
-        <item name="android:paddingTop">60dp</item>
-        <item name="android:paddingBottom">60dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">20dp</item>
         <item name="android:paddingLeft">20dp</item>
         <item name="android:paddingRight">20dp</item>
         <item name="android:textColor">@color/text_primary</item>

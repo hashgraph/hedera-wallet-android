@@ -7,16 +7,29 @@
     <string name="bip39_migration_warning_message">Your old backup-phrase is being replaced with a new 24-word equivalent. Tap here to see that phrase - Make sure you keep a record.</string>
     <string name="bip39_migration_page_message">Your 22 words passphrase is deprecated and will not be supported in future wallet. Please save this new backup phrases to recover your Hedera Wallet</string>
 
+    // Bip32 Migration
+    <string name="bip32_migration_backup_message">These are your new recovery words. Please save them in a safe place (or places), where they won’t be lost, and no one else will see them. Anyone who has these words will have control of the account.</string>
+    <string name="bip32_migration_prompt">A new key generation mechanism is now available. Please update your key pair and your recovery words.</string>
+    <string name="bip32_migration_backup_enter_account_id">After securely saving your new recovery words, enter your account number here, then press \“confirm\”.</string>
+    <string name="bip32_migration_confirm_message">Your account is now being updated. This may take a minute. Please do not quit this app or turn off the phone while it is updating.</string>
+    <string name="bip32_migration_error_message">It looks like something went wrong with the key update. I’m checking now whether the account currently has the new key or the old key.</string>
+    <string name="bip32_migration_success_alert_title">SUCCESS!</string>
+    <string name="bip32_migration_success_alert_body">The key for account %1$s has been updated. The old key on that account is no longer needed.\n\nThis account can now be recovered only with the new recovery words. The old recovery words will no longer work for this account. If you didn’t create any other accounts with the old words, then you can discard the old words, after confirming that the new words work, and there are no other accounts that use them.</string>
+    <string name="update_key_prompt">This will update your key pair and your recovery words.</string>
+
     <string name="default_private_key">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
     <string name="copy_data_clipboard_message">Address copied to clipboard"</string>
     <string name="copy_data_clipboard_account_id">Address copied to clipboard"</string>
     <string name="copy_data_clipboard_account_data">Your account info is copied successfully"</string>
     <string name="copy_data_clipboard_passphrase">Backup phrase copied to clipboard"</string>
+    <string name="copy_data_clipboard_nodes">Nodes copied to clipboard"</string>
 
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="decline">Decline</string>
+    <string name="agree">Agree</string>
 
     <string name="fingerprint_description">Confirm fingerprint to continue</string>
     <string name="fingerprint_hint">Touch sensor</string>
@@ -72,12 +85,14 @@
     <string name="text_from">FROM</string>
     <string name="text_to">TO</string>
     <string name="text_amount">AMOUNT</string>
+    <string name="text_initial_amount">INITIAL AMOUNT</string>
     <string name="text_fee">FEE</string>
     <string name="text_note">NOTE</string>
     <string name="text_profile">PROFILE</string>
-    <string name="text_name">NAME</string>
+    <string name="text_name">Name</string>
     <string name="text_notifications">NOTIFICATIONS</string>
     <string name="text_verify">VERIFY</string>
+    <string name="text_default_fee">Default Fee ( Tiny Bar)</string>
 
     <string name="btn_text_email">Email</string>
     <string name="btn_text_copy">Copy</string>
@@ -87,6 +102,7 @@
     <string name="btn_text_restore_wallet">RESTORE EXISTING WALLET</string>
     <string name="btn_text_confirm">CONFIRM</string>
     <string name="btn_text_request">REQUEST</string>
+    <string name="btn_text_request_account_create">Request Account Create</string>
     <string name="btn_text_pay">PAY</string>
     <string name="btn_text_terms">TERMS</string>
     <string name="btn_text_privacy_policy">PRIVACY POLICY</string>
@@ -102,6 +118,10 @@
     <string name="btn_text_send">SEND</string>
     <string name="btn_text_restore">RESTORE</string>
     <string name="btn_text_next">NEXT</string>
+    <string name="btn_text_migrate">Migrate</string>
+    <string name="btn_text_abort">Abort</string>
+    <string name="btn_text_retry">RETRY</string>
+    <string name="btn_text_help">HELP</string>
 
     <string name="checkbox_text_hidden">HIDDEN</string>
     <string name="checkbox_text_active">Active</string>
@@ -109,6 +129,7 @@
     <string name="checkbox_add_note">ADD NOTE</string>
 
     <string name="edittext_hint_host">Host e.g. 100.31.255.63</string>
+    <string name="edittext_hint_host_with_port">Host e.g. 100.31.255.63:8081</string>
     <string name="edittext_hint_port">Port e.g. 52011</string>
     <string name="edittext_hint_account_id">AccountID e.g. 0.0.2</string>
 
@@ -127,12 +148,13 @@
     <string name="invalid_phrase">Invalid Phrase</string>
     <string name="hbar">HBAR</string>
     <string name="scan_qr">SCAN QR</string>
+    <string name="scan">SCAN</string>
     <string name="add">ADD</string>
     <string name="backup_your_wallet">Back up Your Wallet</string>
     <string name="enter_pin">Enter PIN</string>
     <string name="create_pin">Create PIN</string>
     <string name="restore_wallet_account">Restore Wallet Account</string>
-    <string name="restore_accountid_title">Entet Account ID</string>
+    <string name="restore_accountid_title">Enter Account ID</string>
 
     <string name="host">Host</string>
     <string name="port">Port</string>
@@ -141,22 +163,25 @@
 
     <!--Drawer Menu Items-->
     <string name="menuItem_default_account">Default Account</string>
+    <string name="menuItem_create_account">Create Account</string>
     <string name="menuItem_other_user_account">Other User Account</string>
     <string name="menuItem_requests">Requests</string>
     <string name="menuItem_accounts">Accounts</string>
     <string name="menuItem_activity">Activity</string>
 
     <string name="menuItem_security">Security</string>
-    <string name="menuItem_backup_phrases">Backup Phrases</string>
-    <string name="menuItem_export_key">Export Key</string>
+    <string name="menuItem_backup_phrases">Backup Phrase</string>
+    <string name="menuItem_pay_to_exchange">Pay to Third Party</string>
+    <string name="menuItem_export_key">Export Private Key</string>
     <string name="menuItem_enable_biometric">Enable Fingerprint ID</string>
     <string name="menuItem_enable_pin">Enable PIN</string>
     <string name="menuItem_change_pin">Change PIN</string>
     <string name="menuItem_network">Network</string>
     <string name="menuItem_nodes">Nodes</string>
-    <string name="menuItem_synchronize_data">Synchronize Data</string>
+    <string name="menuItem_get_records">Get Records</string>
     <string name="menuItem_about">About</string>
     <string name="menuItem_profile">Profile</string>
+    <string name="menuItem_update_key">Update Key</string>
     <string name="menuItem_app_information">App Information</string>
 
 
@@ -173,6 +198,9 @@
     <string name="export_key_pin">PIN</string>
     <string name="qr_scan_instruction">Place a QRcode inside the rectangle</string>
     <string name="warning">Warning</string>
-    <string name="warning_query_cost">Fetching balance will cost you hbars. Do you want to proceed?</string>
+    <string name="warning_query_cost">Fetching records will cost you hbars. Do you want to proceed?</string>
+    <string name="warning_pay_to_exchange">You will be sending your transaction to a third party to submit on your behalf. Make sure to only use information provided by a trusted destination.</string>
+
+    <string name="export_key_share_warning">Exporting private keys allows full control of your Hedera account even taking all the hbars in it. Ensure you are only interacting with trusted partners and software.</string>
 
 </resources>

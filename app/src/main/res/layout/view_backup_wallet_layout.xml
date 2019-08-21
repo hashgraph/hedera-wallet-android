@@ -26,6 +26,15 @@
 
             />
 
+        <ImageView
+            android:id="@+id/image_copy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_copy"
+            android:layout_alignParentEnd="true"
+            android:visibility="visible"
+            android:layout_alignBottom="@+id/text_backup_wallet_description"/>
+
         <TextView
             android:id="@+id/textview_crptowords"
             android:layout_marginTop="10dp"

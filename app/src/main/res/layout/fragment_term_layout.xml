@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="opencrowd.hgc.hgcwallet.ui.onboard.OnboardActivity">
+    tools:context="hedera.hgc.hgcwallet.ui.onboard.OnboardActivity">
     <include layout="@layout/title_bar" />
     <RelativeLayout
         android:layout_width="match_parent"

@@ -40,7 +40,7 @@
     <color name="text_light">#9D9FA2</color>
 
     <color name="warning_color">#f4511e</color>
-    <color name="hint_color">#42000000</color>
+    <color name="hint_color">#32000000</color>
     <color name="success_color">#009688</color>
 
 </resources>

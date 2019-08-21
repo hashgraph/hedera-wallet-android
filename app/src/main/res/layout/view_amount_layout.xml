@@ -5,6 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hgc_amount_layout"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
@@ -16,6 +17,7 @@
             style="@style/EditTextAmountBox"
             android:paddingLeft="20dp"
             android:hint="@string/text_hgc_value"
+            android:inputType="numberDecimal"
             />
 
         <TextView
@@ -23,10 +25,10 @@
             android:id="@+id/text_hgc_icon"
             android:text="@string/text_hgc_currency_icon"
             />
-        />
     </RelativeLayout>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/dollar_amount_layout"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
@@ -38,6 +40,7 @@
             style="@style/EditTextAmountBox"
             android:hint="@string/text_hgc_value"
             android:paddingLeft="15dp"
+            android:inputType="numberDecimal"
             />
 
         <TextView

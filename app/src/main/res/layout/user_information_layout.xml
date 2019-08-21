@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_copy"
                 android:layout_alignParentRight="true"
-                android:visibility="invisible"
+                android:visibility="visible"
                 android:layout_alignBottom="@+id/text_public_address"/>
 
             <TextView

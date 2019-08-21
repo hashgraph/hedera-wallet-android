@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "1cbe01b2695af3458ee608decea79492",
+    "identityHash": "46afe84f8c76a6470327bc08e87086c9",
     "entities": [
       {
         "tableName": "Wallet",
@@ -147,7 +147,7 @@
       },
       {
         "tableName": "Contact",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountId` TEXT NOT NULL, `name` TEXT, `isVerified` INTEGER NOT NULL, PRIMARY KEY(`accountId`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountId` TEXT NOT NULL, `name` TEXT, `isVerified` INTEGER NOT NULL, `metaData` TEXT NOT NULL, PRIMARY KEY(`accountId`))",
         "fields": [
           {
             "fieldPath": "accountId",
@@ -165,6 +165,12 @@
             "fieldPath": "isVerified",
             "columnName": "isVerified",
             "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metaData",
+            "columnName": "metaData",
+            "affinity": "TEXT",
             "notNull": true
           }
         ],
@@ -417,7 +423,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"1cbe01b2695af3458ee608decea79492\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"46afe84f8c76a6470327bc08e87086c9\")"
     ]
   }
 }

@@ -32,9 +32,21 @@
             <EditText
                 android:id="@+id/edittext_name"
                 style="@style/EditTextSingleLineBox"
-                android:layout_below="@+id/text_nick_name"
                 android:layout_marginTop="5dp"
                 android:focusableInTouchMode="true" />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/text_default_fee"
+                style="@style/CaptionText"
+                android:text="@string/text_default_fee" />
+
+            <EditText
+                android:id="@+id/edittext_default_fee"
+                style="@style/EditTextSingleLineBox"
+                android:layout_marginTop="5dp"
+                android:focusableInTouchMode="true"
+                android:inputType="numberDecimal"/>
 
             <TextView
                 android:id="@+id/text_settings"
