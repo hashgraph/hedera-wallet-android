@@ -5,28 +5,31 @@
     <include layout="@layout/title_bar"/>
 
     <TextView
-        android:id="@+id/text_nick_name"
-        android:text="@string/text_account_name"
+    android:id="@+id/text_name"
+    android:text="@string/text_account_name"
+    android:layout_marginTop="10dp"
+    style="@style/CaptionText" />
+
+    <EditText
+        android:id="@+id/edittext_account_name"
+        style="@style/EditTextSingleLineBox"
+        android:hint="@string/placeholder_name_optional"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/text_id"
+        android:text="@string/text_account_id"
         android:layout_marginTop="10dp"
         style="@style/CaptionText" />
 
     <EditText
-        android:id="@+id/edittext_nick_name"
+        android:id="@+id/edittext_account_id"
         style="@style/EditTextSingleLineBox"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/text_nick_name"/>
-
-    <CheckBox
-        android:id="@+id/hidden"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="-5dp"
-        android:text="@string/checkbox_text_hidden"
-        android:visibility="gone"
-        style="@style/Checkbox"
-        />
+        android:hint="@string/placeholder_account_id"
+        android:layout_marginTop="5dp" />
 
     <LinearLayout
-        android:id="@+id/btn_linear_layout"
+        android:id="@+id/layout_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -34,23 +37,41 @@
         android:weightSum="2">
 
         <Button
-            android:id="@+id/btn_cancel"
+            android:id="@+id/btn_remove"
             android:layout_width="0dp"
             style="@style/HgcButton"
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/background_button_hgc"
-            android:text="@string/btn_text_cancel" />
+            android:text="@string/btn_text_remove" />
 
         <Button
             android:id="@+id/btn_save"
+            style="@style/HgcButton"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/background_button_hgc"
+
+            android:text="@string/btn_text_save"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+        <Button
+            android:id="@+id/btn_add"
             style="@style/HgcButton"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/background_button_hgc"
             android:text="@string/add"/>
     </LinearLayout>
 </LinearLayout>

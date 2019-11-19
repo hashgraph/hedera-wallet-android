@@ -24,7 +24,6 @@
             android:id="@+id/edittext_node_host"
             style="@style/EditTextSingleLineBox"
             android:padding="10dp"
-            android:inputType="phone"
             android:hint="@string/edittext_hint_host"
             android:focusableInTouchMode="true" />
 
@@ -48,7 +47,6 @@
             android:id="@+id/edittext_node_port"
             style="@style/EditTextSingleLineBox"
             android:padding="10dp"
-            android:inputType="phone"
             android:hint="@string/edittext_hint_port"
             android:focusableInTouchMode="true" />
 
@@ -73,7 +71,6 @@
             style="@style/EditTextSingleLineBox"
             android:padding="10dp"
             android:hint="@string/edittext_hint_account_id"
-            android:inputType="phone"
             android:focusableInTouchMode="true" />
 
     </LinearLayout>

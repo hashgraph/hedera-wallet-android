@@ -42,7 +42,7 @@
                     android:layout_toRightOf="@+id/text_hgc_amount"
                     android:text="@string/text_hgc_currency_icon"
                     android:textColor="@color/positive"
-                    android:fontFamily="@font/styreneh_regular"
+                    android:fontFamily="@font/hederah_regular"
                     android:textSize="20sp"
                     />
             </RelativeLayout>
@@ -93,17 +93,8 @@
                         android:id="@+id/text_from_account_name"
                         style="@style/KeyTextView"
                         android:padding="10dp"
+                        android:hint="@string/placeholder_name_optional"
                         />
-
-                    <TextView
-                        android:id="@+id/text_verify_from_account"
-                        style="@style/HgcPayClickableTextView"
-                        android:layout_margin="5dp"
-                        android:visibility="gone"
-                        android:text="@string/text_verify" />
-
-                    />
-
 
                 </RelativeLayout>
 
@@ -143,17 +134,8 @@
                         android:id="@+id/text_to_account_name"
                         style="@style/KeyTextView"
                         android:padding="10dp"
+                        android:hint="@string/placeholder_name_optional"
                         />
-
-                    <TextView
-                        android:id="@+id/text_verify_to_account"
-                        style="@style/HgcPayClickableTextView"
-                        android:layout_margin="5dp"
-                        android:visibility="gone"
-                        android:text="@string/text_verify" />
-
-                    />
-
 
                 </RelativeLayout>
 

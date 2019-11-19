@@ -1,22 +1,52 @@
+<!--
+  ~
+  ~  Copyright 2019 Hedera Hashgraph LLC
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~
+  -->
+
 <resources>
     <string name="app_name">Hedera Wallet</string>
 
-    <string name="message_create_new_wallet">Like a password, this backup phrase is the only way to recover a Hedera Wallet. Save the backup phrases to recover your Hedera Wallet if it is deleted, lost, or you get a new phone. It is recommended to also save your accountID along with these 24 words.</string>
+    <string name="message_create_new_wallet">Like a password, this recovery phrase is the only way to recover a Hedera Wallet. Save the recovery phrase to recover your Hedera Wallet if it is deleted, lost, or you get a new phone. It is recommended to also save your accountID along with these 24 words.</string>
     <string name="message_restore_wallet">Enter, in order, the 22 or 24 words you were given when you created your previous wallet account. You will be prompted to enter the account id in next step.</string>
-    <string name="message_restore_accountid">If you already know the account number enter here or visit <a href="https://help.hedera.com/hc/en-us/articles/360000714658">hedera portal</a> to get it. You can skip this step and change it later in Accounts menu.</string>
-    <string name="bip39_migration_warning_message">Your old backup-phrase is being replaced with a new 24-word equivalent. Tap here to see that phrase - Make sure you keep a record.</string>
-    <string name="bip39_migration_page_message">Your 22 words passphrase is deprecated and will not be supported in future wallet. Please save this new backup phrases to recover your Hedera Wallet</string>
+    <string name="message_restore_accountid">Please enter the Account ID associated with the recovery phrase entered.</string>
+    <string name="bip32_migration_warning_message_purple">The latest version of the Hedera Wallet requires your public / private key pair and recovery phrase for account ID %1$s be updated. Tap here to perform this update, and securely document your new information.</string>
+
+    // Bip32 Migration
+    <string name="bip32_migration_backup_message">Found below is your new recovery phrase. Please save it in a safe place (or places), where it won\'t be lost, and no one else will see it. Anyone who possesses this recovery phrase will have control over the account.</string>
+    <string name="bip32_migration_prompt">We’ve updated the Hedera Wallet’s key generation mechanism to match industry standard encryption (BIP39).\n\nTap ‘Accept’ to update the public / private key pairs and recovery phrase associated with your existing Hedera account ID. (Recommended)\n\nTap ‘Skip’ to retain the public / private key pairs and recovery phrase associated with your existing Hedera account ID. You will eventually need ‘Accept’ this change in future Hedera Wallet application updates.</string>
+    <string name="bip32_migration_backup_enter_account_id">After securely documenting your new recovery phrase, please enter your account ID in the field below and tap \'Confirm\'.</string>
+    <string name="bip32_migration_confirm_message">The public / private key pair and recovery phrase for your Hedera account ID is being updated.\n\nThis may take a minute. Please do not quit this application or turn off your device during the update.</string>
+    <string name="bip32_migration_error_message">It looks like something went wrong with the key update. I’m checking now whether the account currently has the new key or the old key.</string>
+    <string name="bip32_migration_success_alert_title">Thank you</string>
+    <string name="bip32_migration_success_alert_body">The private / public key pair and recovery phrase for account ID %1$s has been updated.\n\nThis account ID can now be recovered using your new recovery phrase, from both the Hedera Wallet and any other wallet or application which supports the BIP39 encryption standard.</string>
+    <string name="update_key_prompt">This will update your key pair and your recovery phrase.</string>
 
     <string name="default_private_key">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
     <string name="copy_data_clipboard_message">Address copied to clipboard"</string>
     <string name="copy_data_clipboard_account_id">Address copied to clipboard"</string>
     <string name="copy_data_clipboard_account_data">Your account info is copied successfully"</string>
-    <string name="copy_data_clipboard_passphrase">Backup phrase copied to clipboard"</string>
+    <string name="copy_data_clipboard_passphrase">Recovery phrase copied to clipboard"</string>
+    <string name="copy_data_clipboard_nodes">Nodes copied to clipboard"</string>
 
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="decline">Decline</string>
+    <string name="agree">Agree</string>
 
     <string name="fingerprint_description">Confirm fingerprint to continue</string>
     <string name="fingerprint_hint">Touch sensor</string>
@@ -27,7 +57,6 @@
     <string name="use_fingerprint_to_authenticate_title">Use fingerprint to authenticate</string>
     <string name="use_fingerprint_to_authenticate_key">use_fingerprint_to_authenticate_key</string>
     <string name="description_fingerprint_icon">Fingerprint icon</string>
-    <string name="verify_alias">PLEASE CONFIRM THAT THE PROVIDED NAME MATCHES ACCOUNT ADDRESS</string>
 
     <string name="text_default_account">Default Account</string>
     <string name="text_hgc_value">0.000</string>
@@ -72,21 +101,29 @@
     <string name="text_from">FROM</string>
     <string name="text_to">TO</string>
     <string name="text_amount">AMOUNT</string>
+    <string name="text_initial_amount">INITIAL AMOUNT</string>
     <string name="text_fee">FEE</string>
+    <string name="text_max_fee">MAX FEE</string>
+    <string name="text_create_account_renew_info">Account AutoRenew Period is 3 months</string>
+
     <string name="text_note">NOTE</string>
     <string name="text_profile">PROFILE</string>
-    <string name="text_name">NAME</string>
+    <string name="text_name">Name</string>
     <string name="text_notifications">NOTIFICATIONS</string>
     <string name="text_verify">VERIFY</string>
+    <string name="text_default_fee">Max Fee</string>
+    <string name="text_security">Security</string>
 
     <string name="btn_text_email">Email</string>
     <string name="btn_text_copy">Copy</string>
     <string name="btn_text_done">Done</string>
     <string name="btn_text_accept">Accept</string>
+    <string name="btn_text_full_terms">See full terms &amp; conditions</string>
     <string name="btn_text_create_new_wallet">CREATE NEW WALLET</string>
     <string name="btn_text_restore_wallet">RESTORE EXISTING WALLET</string>
     <string name="btn_text_confirm">CONFIRM</string>
     <string name="btn_text_request">REQUEST</string>
+    <string name="btn_text_request_account_create">Request Account Create</string>
     <string name="btn_text_pay">PAY</string>
     <string name="btn_text_terms">TERMS</string>
     <string name="btn_text_privacy_policy">PRIVACY POLICY</string>
@@ -97,11 +134,17 @@
     <string name="btn_text_existing">EXISTING</string>
     <string name="btn_text_new">NEW</string>
     <string name="btn_text_fingerprint">Enable fingerprint</string>
-    <string name="btn_text_setup_pin">setup 4 digit password</string>
+    <string name="btn_text_setup_pin">setup %1$s digit password</string>
     <string name="btn_text_qr">QR</string>
     <string name="btn_text_send">SEND</string>
     <string name="btn_text_restore">RESTORE</string>
     <string name="btn_text_next">NEXT</string>
+    <string name="btn_text_migrate">Migrate</string>
+    <string name="btn_text_abort">Abort</string>
+    <string name="btn_text_retry">RETRY</string>
+    <string name="btn_text_help">HELP</string>
+    <string name="btn_text_remove">REMOVE</string>
+    <string name="btn_text_licenses">Licenses</string>
 
     <string name="checkbox_text_hidden">HIDDEN</string>
     <string name="checkbox_text_active">Active</string>
@@ -109,6 +152,7 @@
     <string name="checkbox_add_note">ADD NOTE</string>
 
     <string name="edittext_hint_host">Host e.g. 100.31.255.63</string>
+    <string name="edittext_hint_host_with_port">Host e.g. 100.31.255.63:8081</string>
     <string name="edittext_hint_port">Port e.g. 52011</string>
     <string name="edittext_hint_account_id">AccountID e.g. 0.0.2</string>
 
@@ -120,19 +164,20 @@
     <string name="text_account_not_linked">Account is not linked</string>
     <string name="transaction_submitted_successfully">Transaction submitted successfully</string>
     <string name="invalid_account_id">INVALID ACCOUNT ID</string>
-    <string name="failed_to_fetch_balances">Failed to fetch balances</string>
+    <string name="failed_to_fetch_balances">Failed to update balance</string>
     <string name="failed_to_fetch_records">Failed to fetch transaction records</string>
 
     <string name="wallet_restored">Wallet restored</string>
     <string name="invalid_phrase">Invalid Phrase</string>
     <string name="hbar">HBAR</string>
     <string name="scan_qr">SCAN QR</string>
+    <string name="scan">SCAN</string>
     <string name="add">ADD</string>
     <string name="backup_your_wallet">Back up Your Wallet</string>
     <string name="enter_pin">Enter PIN</string>
     <string name="create_pin">Create PIN</string>
     <string name="restore_wallet_account">Restore Wallet Account</string>
-    <string name="restore_accountid_title">Entet Account ID</string>
+    <string name="restore_accountid_title">Enter Account ID</string>
 
     <string name="host">Host</string>
     <string name="port">Port</string>
@@ -141,23 +186,28 @@
 
     <!--Drawer Menu Items-->
     <string name="menuItem_default_account">Default Account</string>
+    <string name="menuItem_account_viewer">Account Viewer</string>
+    <string name="menuItem_create_account">Create Account</string>
     <string name="menuItem_other_user_account">Other User Account</string>
     <string name="menuItem_requests">Requests</string>
     <string name="menuItem_accounts">Accounts</string>
     <string name="menuItem_activity">Activity</string>
 
     <string name="menuItem_security">Security</string>
-    <string name="menuItem_backup_phrases">Backup Phrases</string>
-    <string name="menuItem_export_key">Export Key</string>
+    <string name="menuItem_backup_phrases">Recovery Phrase</string>
+    <string name="menuItem_pay_to_exchange">Pay to Third Party</string>
     <string name="menuItem_enable_biometric">Enable Fingerprint ID</string>
     <string name="menuItem_enable_pin">Enable PIN</string>
     <string name="menuItem_change_pin">Change PIN</string>
     <string name="menuItem_network">Network</string>
     <string name="menuItem_nodes">Nodes</string>
-    <string name="menuItem_synchronize_data">Synchronize Data</string>
+    <string name="menuItem_get_records">Get Records</string>
     <string name="menuItem_about">About</string>
     <string name="menuItem_profile">Profile</string>
+    <string name="menuItem_update_key">Update Key</string>
     <string name="menuItem_app_information">App Information</string>
+    <string name="menuItem_master_reset">Master Reset</string>
+    <string name="menuItem_exchange_rate">Exchange Rate</string>
 
 
     <string name="text_term">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -173,6 +223,27 @@
     <string name="export_key_pin">PIN</string>
     <string name="qr_scan_instruction">Place a QRcode inside the rectangle</string>
     <string name="warning">Warning</string>
-    <string name="warning_query_cost">Fetching balance will cost you hbars. Do you want to proceed?</string>
+    <string name="warning_query_cost">Fetching records will cost you hbars. Do you want to proceed?</string>
+    <string name="warning_pay_to_exchange">You will be sending your transaction to a third party to submit on your behalf. Make sure to only use information provided by a trusted destination.</string>
+
+    <string name="export_key_share_warning">Exporting private keys allows full control of your Hedera account even taking all the hbars in it. Ensure you are only interacting with trusted partners and software.</string>
+
+    <string name="enable_biometric">Enable Fingerprint ID</string>
+    <string name="enable_pin">Enable PIN</string>
+    <string name="change_pin">Change PIN</string>
+    <string name="invalid_fee_title">Couldn\'t save default max fee.</string>
+    <string name="invalid_fee_message">Please enter a valid amount for your Max Fee threshold.</string>
+
+    <string name="master_reset_message">You are about to perform a Master Reset on your wallet, this will remove all keys, accounts, and recovery words from this device, this will not change anything on the Network. Please save all your recovery words before this step.</string>
+    <string name="master_reset_failure_message">There were some issues while doing wallet reset. We recommend deleting the wallet and install it again.</string>
+    <string name="proceed">Proceed</string>
+    <string name="error">Error</string>
+    <string name="refresh">Refresh</string>
+    <string name="unknown">Unknown</string>
+    <string name="last">Last</string>
+    <string name="bid">Bid</string>
+    <string name="ask">Ask</string>
+
+    <string name="refresh_nodes_warning">Refreshing nodes will cost you hbars. Do you want to proceed?</string>
 
 </resources>

@@ -66,10 +66,20 @@
         android:id="@+id/btn_privacy_policy"
         android:layout_width="wrap_content"
         style="@style/HgcButton"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/background_button_hgc"
         android:text="@string/btn_text_privacy_policy"
+        android:layout_above="@+id/btn_license"
         android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btn_license"
+            style="@style/HgcButton"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_button_hgc"
+            android:text="@string/btn_text_licenses" />
     </RelativeLayout>
 </LinearLayout>

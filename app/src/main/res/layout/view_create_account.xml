@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <RelativeLayout style="@style/ContentLayout">
+
+            <TextView
+                android:id="@+id/text_from"
+                style="@style/CaptionText"
+                android:layout_marginTop="10dp"
+                android:text="@string/text_from" />
+
+            <include layout="@layout/select_account_layout" />
+
+
+            <LinearLayout
+                android:id="@+id/layout_public_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/account_row_layout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_public_address"
+                    style="@style/CaptionText"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/text_public_address" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_public_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <EditText
+                        android:id="@+id/edittext_public_key"
+                        style="@style/EditTextMultiLineBox"
+                        android:hint="Hex encoded key"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="65dp" />
+                    <TextView
+                        android:id="@+id/text_scan"
+                        style="@style/HgcPayClickableTextView"
+                        android:text="@string/scan"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/amount_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_public_address"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layout_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+                    <TextView
+                        android:id="@+id/text_note"
+                        style="@style/CaptionText"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/text_note" />
+
+                    <EditText
+                        android:id="@+id/edittext_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="top"
+                        android:padding="5dp"
+                        android:fontFamily="@font/styrenea_regular"
+                        android:textSize="@dimen/font_light_medium"
+                        android:textCursorDrawable="@drawable/edittext_cursor_view"
+                        android:background="@drawable/user_inform_edittext_background"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_amount"
+                    style="@style/CaptionText"
+                    android:layout_below="@+id/layout_note"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/text_initial_amount" />
+
+                <TextView
+                    android:id="@+id/text_amount_value"
+                    style="@style/CaptionText"
+                    android:layout_alignBaseline="@id/text_amount"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/text_amount"
+                    android:gravity="center_vertical|center"
+                    android:paddingStart="5dp"
+                    android:text="@string/text_hgc_value" />
+
+                <TextView
+                    android:id="@+id/text_fee"
+                    style="@style/CaptionText"
+                    android:layout_below="@+id/text_amount"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/text_max_fee" />
+
+                <TextView
+                    android:id="@+id/text_fee_value"
+                    style="@style/CaptionText"
+                    android:layout_alignBaseline="@id/text_fee"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/text_fee"
+                    android:gravity="center_vertical|center"
+                    android:paddingStart="5dp"
+                    android:text="@string/text_hgc_value" />
+
+                <TextView
+                    android:id="@+id/text_info"
+                    style="@style/CaptionText"
+                    android:layout_below="@+id/text_fee_value"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/text_create_account_renew_info" />
+
+                <Button
+                    android:id="@+id/btn_pay"
+                    style="@style/HgcButton"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/text_info"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/btn_text_pay"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

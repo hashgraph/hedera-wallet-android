@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_page_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_page_content"
+        android:layout_marginRight="@dimen/margin_page_content">
+
+
+        <TextView
+            android:id="@+id/text_backup_wallet_description"
+            style="@style/OnboardingParagraph"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:text="@string/bip32_migration_backup_message"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/font_regular_very_large"
+            />
+
+        <TextView
+            android:id="@+id/textview_crptowords"
+            style="@style/TextviewWalletKeywords"
+            android:layout_below="@id/text_backup_wallet_description"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_textview" />
+
+
+        <LinearLayout
+            android:id="@+id/layout_confirmation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_crptowords"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/text_enter_full_account_id"
+                style="@style/OnboardingParagraph"
+                android:layout_width="match_parent"
+                android:text="@string/bip32_migration_backup_enter_account_id"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/edittext_full_account_id"
+                style="@style/EditTextSingleLineBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="top|start"
+                android:maxLines="10" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_confirmation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp">
+            <Button
+                android:id="@+id/btn_copy"
+                style="@style/HgcButton"
+                android:layout_width="wrap_content"
+                android:minWidth="120dp"
+                android:text="@string/btn_text_copy" />
+
+            <Button
+                android:id="@+id/btn_confirm"
+                style="@style/HgcButton"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="20dp"
+                android:minWidth="120dp"
+                android:background="@drawable/background_button_hgc"
+                android:text="@string/btn_text_confirm" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

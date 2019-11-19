@@ -16,13 +16,6 @@
             style="@style/ContentLayout"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/text_amount"
-                style="@style/SettingsCaptionText"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/text_profile"
-                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/text_nick_name"
@@ -32,62 +25,66 @@
             <EditText
                 android:id="@+id/edittext_name"
                 style="@style/EditTextSingleLineBox"
-                android:layout_below="@+id/text_nick_name"
                 android:layout_marginTop="5dp"
                 android:focusableInTouchMode="true" />
 
             <TextView
-                android:id="@+id/text_settings"
-                style="@style/SettingsCaptionText"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/text_settings"
-                android:visibility="gone"/>
+                android:layout_marginTop="20dp"
+                android:id="@+id/text_default_fee"
+                style="@style/CaptionText"
+                android:text="@string/text_default_fee" />
 
-            <RadioGroup
-                android:layout_width="wrap_content"
+
+            <RelativeLayout
+                android:id="@+id/layout_default_Fee"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone">
+                >
 
-                <RadioButton
-                    android:id="@+id/btn_radio_fingerprint"
-                    style="@style/RadioButton"
-                    android:layout_marginLeft="-5dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/radio_text_enable_fingerprint" />
-
-                <RadioButton
-                    android:id="@+id/btn_radio_pinsetup"
-                    style="@style/RadioButton"
-                    android:layout_marginLeft="-5dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/radio_text_enable_pin_login" />
-            </RadioGroup>
+                <EditText
+                    android:id="@+id/edittext_default_fee"
+                    style="@style/EditTextSingleLineBox"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="20dp"
+                    android:focusableInTouchMode="true" />
+                <TextView
+                    style="@style/TextViewInsideAmountEditText"
+                    android:id="@+id/text_hgc_icon"
+                    android:text="@string/text_hgc_currency_icon"
+                    android:layout_alignBaseline="@+id/edittext_default_fee"
+                    />
+            </RelativeLayout>
 
 
             <TextView
-                android:id="@+id/text_notifications"
-                style="@style/SettingsCaptionText"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="30dp"
-                android:visibility="gone"
-                android:text="@string/text_notifications" />
-
-            <CheckBox
-                android:id="@+id/checkbox_payment_confirmations"
-                style="@style/Checkbox"
-                android:layout_marginLeft="-5dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/text_security"
+                style="@style/CaptionText"
+                android:text="@string/text_security" />
+            <LinearLayout
+                android:id="@+id/btn_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/radio_text_payment_confirmations"
-                android:visibility="gone"/>
+                android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/checkbox_receive_funds"
-                style="@style/Checkbox"
-                android:layout_marginLeft="-5dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/radio_text_receive_funds"
-                android:visibility="gone"/>
+                <Button
+                    android:id="@+id/btn_pin"
+                    android:layout_width="wrap_content"
+                    style="@style/HgcButton"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/background_button_hgc"
+                    android:text="@string/enable_pin" />
+
+                <Button
+                    android:id="@+id/btn_fingerprint"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/background_button_hgc"
+                    style="@style/HgcButton"
+                    android:text="@string/enable_biometric"/>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

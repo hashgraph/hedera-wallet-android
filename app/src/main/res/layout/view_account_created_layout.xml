@@ -46,7 +46,6 @@
     <EditText
         android:id="@+id/edittext_account_id"
         style="@style/EditTextSingleLineBox"
-        android:inputType="phone"
         android:layout_marginTop="5dp"
         android:layout_below="@+id/text_nick_name"/>
 
@@ -62,7 +61,7 @@
     <ImageView
         android:id="@+id/image_copy"
         style="@style/ImageviewCopy"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_alignBottom="@+id/text_public_address"/>
 
     <TextView

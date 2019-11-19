@@ -10,20 +10,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bip39_migration_warning_message"
+        android:text="@string/bip32_migration_warning_message_purple"
         style="@style/Bip39Message"
         android:padding="20dp"
         android:id="@+id/bip39_warning_tv"/>
 
-    <android.support.v4.view.ViewPager
+    <hedera.hgc.hgcwallet.ui.customviews.CustomViewPager
         android:id="@+id/viewpager"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_below="@+id/bip39_warning_tv"
-        android:layout_height="225dp">
-    </android.support.v4.view.ViewPager>
+        android:layout_height="wrap_content">
+    </hedera.hgc.hgcwallet.ui.customviews.CustomViewPager>
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/dots"
         android:layout_width="match_parent"
         android:layout_height="26dp"
@@ -70,12 +70,12 @@
             android:layout_width="match_parent"
             android:visibility="invisible"/>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:id="@+id/text_no_transaction"

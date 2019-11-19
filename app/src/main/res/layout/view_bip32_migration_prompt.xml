@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_grey_dark">
+
+            <ImageView
+                android:id="@+id/imageView_icon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_hbar_grey_white" />
+
+            <TextView
+                android:id="@+id/text_key_generation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView_icon"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:text="@string/bip32_migration_prompt"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_key_generation"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp">
+
+                <Button
+                    android:id="@+id/btn_accept"
+                    style="@style/HgcButton"
+                    android:layout_width="wrap_content"
+                    android:minWidth="120dp"
+                    android:text="@string/btn_text_accept" />
+
+                <Button
+                    android:id="@+id/btn_skip"
+                    style="@style/HgcButton"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/background_button_hgc"
+                    android:minWidth="120dp"
+                    android:text="@string/btn_text_skip" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

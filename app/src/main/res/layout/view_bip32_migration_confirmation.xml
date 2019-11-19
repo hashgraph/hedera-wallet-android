@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_page_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_page_content"
+        android:layout_marginRight="@dimen/margin_page_content">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/gray"
+            android:layout_centerInParent="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_page_content"
+            android:layout_marginRight="@dimen/margin_page_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/text_confirmation_description"
+                style="@style/OnboardingParagraph"
+                android:layout_width="match_parent"
+                android:layout_centerHorizontal="true"
+                android:text="@string/bip32_migration_confirm_message"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/font_regular_very_large"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

@@ -77,8 +77,7 @@
             android:id="@+id/new_btn_open_layout"
             android:layout_below="@+id/text_to"
             android:orientation="vertical"
-            android:visibility="gone"
-            >
+            android:visibility="gone">
 
             <RelativeLayout
                 android:layout_width="fill_parent"
@@ -97,9 +96,6 @@
                     android:layout_margin="5dp"
                     android:text="@string/btn_text_cancel"/>
 
-                    />
-
-
             </RelativeLayout>
 
             <EditText
@@ -107,8 +103,16 @@
                 style="@style/EditTextSingleLineBox"
                 android:hint="@string/edittext_hint_account_id"
                 android:padding="10dp"
-                android:inputType="phone"
                 android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:id="@+id/edittext_host"
+                style="@style/EditTextSingleLineBox"
+                android:hint="@string/edittext_hint_host_with_port"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
                 />
 
         </LinearLayout>
@@ -143,33 +147,23 @@
                  android:layout_below="@+id/amount_layout"
                  />
 
+
              <CheckBox
                  android:id="@+id/add_note"
-                 android:layout_marginTop="20dp"
+                 android:layout_marginTop="15dp"
                  android:layout_marginLeft="-6dp"
                  android:text="@string/checkbox_add_note"
                  style="@style/Checkbox"
                  android:layout_below="@+id/amount_layout"
                  />
 
-             <TextView
-                 style="@style/CaptionText"
-                 android:id="@+id/text_fee"
-                 android:layout_marginTop="10dp"
+             <LinearLayout
+                 android:id="@+id/layout_note"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
                  android:layout_below="@+id/add_note"
-                 android:text="@string/text_fee"/>
-
-             <TextView
-                 style="@style/CaptionText"
-                 android:id="@+id/text_fee_value"
-                 android:layout_marginTop="10dp"
-                 android:layout_marginLeft="10dp"
-                 android:layout_toRightOf="@+id/text_fee"
-                 android:layout_below="@+id/add_note"
-                 android:paddingLeft="5dp"
-                 android:gravity="center_vertical|center"
-                 android:text="@string/text_hgc_value"/>
-
+                 android:orientation="vertical"
+                 android:visibility="gone">
                  <TextView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
@@ -177,7 +171,6 @@
                      android:id="@+id/text_note"
                      android:textSize="13sp"
                      android:layout_below="@+id/text_fee"
-                     android:visibility="gone"
                      android:text="@string/text_note"/>
 
                  <EditText
@@ -187,18 +180,38 @@
                      android:layout_marginTop="5dp"
                      android:gravity="top"
                      android:padding="5dp"
-                     android:visibility="gone"
+                     android:fontFamily="@font/styrenea_regular"
+                     android:textSize="@dimen/font_light_medium"
                      android:textCursorDrawable="@drawable/edittext_cursor_view"
                      android:background="@drawable/user_inform_edittext_background"
                      android:layout_below="@id/text_note"
                      />
+             </LinearLayout>
+
+             <TextView
+                 style="@style/CaptionText"
+                 android:id="@+id/text_fee"
+                 android:layout_marginTop="10dp"
+                 android:layout_below="@+id/layout_note"
+                 android:text="@string/text_max_fee"/>
+
+             <TextView
+                 style="@style/CaptionText"
+                 android:id="@+id/text_fee_value"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginLeft="10dp"
+                 android:layout_toRightOf="@+id/text_fee"
+                 android:layout_below="@+id/layout_note"
+                 android:paddingLeft="5dp"
+                 android:gravity="center_vertical|center"
+                 android:text="@string/text_hgc_value"/>
 
              <Button
                  android:id="@+id/btn_pay"
                  style="@style/HgcButton"
                  android:layout_width="wrap_content"
                  android:layout_centerHorizontal="true"
-                 android:layout_below="@id/edittext_note"
+                 android:layout_below="@id/text_fee"
                  android:layout_marginTop="20dp"
                  android:layout_marginBottom="20dp"
                  android:text="@string/btn_text_pay"

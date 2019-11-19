@@ -5,9 +5,13 @@
     <item android:title="@string/menuItem_accounts">
         <menu>
             <item
-                android:icon="@color/zxing_transparent"
-                android:id="@+id/default_account"
-                android:title="@string/menuItem_default_account" />
+            android:icon="@color/zxing_transparent"
+            android:id="@+id/default_account"
+            android:title="@string/menuItem_default_account" />
+
+            <item
+                android:id="@+id/account_viewer"
+                android:title="@string/menuItem_account_viewer" />
         </menu>
     </item>
 
@@ -17,6 +21,15 @@
                 android:icon="@color/zxing_transparent"
                 android:id="@+id/requests"
                 android:title="@string/menuItem_requests" />
+            <item
+                android:id="@+id/pay_to_exchange"
+                android:visible="false"
+                android:title="@string/menuItem_pay_to_exchange"
+                />
+            <item
+                android:icon="@color/zxing_transparent"
+                android:id="@+id/create_account"
+                android:title="@string/menuItem_create_account" />
         </menu>
     </item>
 
@@ -27,14 +40,8 @@
                 android:id="@+id/backup_phrases"
                 android:title="@string/menuItem_backup_phrases" />
             <item
-                android:id="@+id/export_key"
-                android:title="@string/menuItem_export_key" />
-            <item
-                android:id="@+id/enable_face_fingerprint"
-                android:title="@string/menuItem_enable_biometric" />
-            <item
-                android:id="@+id/enable_pin"
-                android:title="@string/menuItem_enable_pin" />
+                android:id="@+id/update_key"
+                android:title="@string/menuItem_update_key" />
         </menu>
     </item>
 
@@ -45,8 +52,11 @@
                 android:id="@+id/nodes"
                 android:title="@string/menuItem_nodes" />
             <item
-                android:id="@+id/synchronize_data"
-                android:title="@string/menuItem_synchronize_data" />
+                android:id="@+id/exchangeRate"
+                android:title="@string/menuItem_exchange_rate" />
+            <item
+                android:id="@+id/get_records"
+                android:title="@string/menuItem_get_records" />
         </menu>
     </item>
 
@@ -59,6 +69,9 @@
             <item
                 android:id="@+id/app_info"
                 android:title="@string/menuItem_app_information" />
+            <item
+                android:id="@+id/master_reset"
+                android:title="@string/menuItem_master_reset" />
         </menu>
     </item>
 </menu>

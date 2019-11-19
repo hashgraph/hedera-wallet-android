@@ -1,3 +1,21 @@
+<!--
+  ~
+  ~  Copyright 2019 Hedera Hashgraph LLC
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  ~
+  -->
+
 <vector android:height="24dp" android:viewportHeight="512"
     android:viewportWidth="512" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#FF000000" android:pathData="M102.59,341.42a15,15 0,0 1,-13.42 -8.28,187.41 187.41,0 0,1 35.11,-216.86c73.18,-73.19 192.26,-73.19 265.44,0a15,15 0,0 1,-21.21 21.21C307,76 207,76 145.49,137.49A157.45,157.45 0,0 0,116 319.69a15,15 0,0 1,-13.4 21.73Z"/>

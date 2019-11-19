@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar"/>
+
+
+    <TextView
+        android:id="@+id/tv_avg_exchange_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/styrenea_regular"
+        android:text="@string/text_hgc_currency_icon"
+        android:textColor="@color/text_primary"
+        android:textSize="17sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exchange_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+</LinearLayout>
