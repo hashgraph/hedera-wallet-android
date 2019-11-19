@@ -23,4 +23,4 @@ This uses a unique combination of BIP39 and PBKDF2 to generate a sequential keys
 7. Get Records
 8. Fees Customization
 
-# Note: app.properties file is needed to build. Due to propriety issues, this file has not been included here.
+Note: app.properties file is needed to build. Due to propriety issues, this file has not been included here.
