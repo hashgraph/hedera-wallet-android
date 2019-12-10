@@ -1,3 +1,6 @@
+# Ignore the IntelliJ Idea directory, which is now all considered local to the
+# user.
+.idea
 
 # Created by https://www.gitignore.io/api/java,maven,gradle,android,eclipse,intellij,androidstudio
 # Edit at https://www.gitignore.io/?templates=java,maven,gradle,android,eclipse,intellij,androidstudio
