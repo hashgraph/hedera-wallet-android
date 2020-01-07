@@ -417,8 +417,11 @@ object Singleton {
     }
 
     private fun loadExchangeRate() {
-        defaultExchangeRate = getAllRates().mapNotNull { it.last }.let { if (it.isNotEmpty()) (it.sum() / it.count().toDouble()) else defaultExchangeRate }
-
+        val rates = getAllRates().mapNotNull{ it.last }.sorted()
+        if (rates.isEmpty()) { return }
+        val lowerMedianIndex = rates.count() / 2
+        val offset = if (rates.count() % 2 == 0) 1 else 0
+        defaultExchangeRate = (rates[lowerMedianIndex] + rates[lowerMedianIndex - offset]) / 2
     }
 
     fun getAllRates(): List<ExchangeRateInfo> {
