@@ -65,7 +65,7 @@ class ExchangeRateView(context: Context, val params: ExchangeRateScreen.Params) 
         }
 
         findViewById<TextView>(R.id.tv_avg_exchange_rate)?.apply {
-            text = "1 ${context.getString(R.string.text_hgc_currency_icon)} = ${Singleton.formatUSD(Singleton.hgcToUSD(Singleton.toNanoCoins(1.0)), true, maxFractionDigitCount = 4)}"
+            text = "1 ${context.getString(R.string.text_hgc_currency_icon)} = ${Singleton.formatUSD(Singleton.hgcToUSD(Singleton.toNanoCoins(1.0)), true, maxFractionDigitCount = 99)}"
         }
     }
 }
