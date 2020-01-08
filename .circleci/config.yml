@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  andr-environment-setup:
+    working_directory: ~/dev
+    docker:
+      - image: circleci/android:api-28
+    steps:
+      - checkout
+workflows:
+  version: 2
+  build-and-unit-test:
+    jobs:
+      - andr-environment-setup
