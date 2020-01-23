@@ -44,7 +44,7 @@ import org.slf4j.LoggerFactory
 
 @Database(entities = [Wallet::class, Account::class, Contact::class, PayRequest::class,
                      TxnRecord::class, Node::class],
-          version = 4)
+          version = 5)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
@@ -78,7 +78,8 @@ abstract class AppDatabase : RoomDatabase() {
                     // Allow queries on the main thread.
                     // Don't do this in a real app!  See PersistenceBasicSample for an example.
                     //
-                    .allowMainThreadQueries().addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
+                    .allowMainThreadQueries()
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
                     .build()
         }
 
@@ -169,6 +170,32 @@ abstract class AppDatabase : RoomDatabase() {
                     throw e
                 } finally {
                     Log.debug("Ending DB migration from version 3 to 4")
+                }
+            }
+        }
+
+        private val MIGRATION_4_5: Migration = object: Migration(4, 5) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                Log.debug("Beginning DB migration from version 4 to 5")
+                try {
+                    //
+                    // Issue #157: Update address book to include new nodes
+                    //
+                    // Remove all of the current nodes, forcing the address book to be reloaded.
+                    // This is the minimal change needed, and we need to minimize changes until
+                    // test infrastructure is better established.
+                    //
+                    database.execSQL("DELETE FROM NODE")
+                } catch (e: SQLException) {
+                    Log.error("SQL exception: $e")
+                    Log.error("FAILED DB migration")
+                    throw e
+                } catch (e: RuntimeException) {
+                    Log.error("Runtime exception: $e")
+                    Log.error("FAILED DB migration")
+                    throw e
+                } finally {
+                    Log.debug("Ending DB migration from version 4 to 5")
                 }
             }
         }
