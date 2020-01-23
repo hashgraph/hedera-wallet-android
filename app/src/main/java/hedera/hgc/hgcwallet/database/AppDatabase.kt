@@ -1,6 +1,6 @@
 /*
  *
- *  Copyright 2019 Hedera Hashgraph LLC
+ *  Copyright 2019-2020 Hedera Hashgraph LLC
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -63,8 +63,12 @@ abstract class AppDatabase : RoomDatabase() {
 
         fun createOrGetAppDatabase(context: Context): AppDatabase {
             return Room.databaseBuilder(context, AppDatabase::class.java, "wallet-database")
-                    // allow queries on the main thread.
-                    // Don't do this on a real app! See PersistenceBasicSample for an example.
+                    //
+                    // Issue #165: Do not allow database queries on the UI thread.
+                    //
+                    // Allow queries on the main thread.
+                    // Don't do this in a real app!  See PersistenceBasicSample for an example.
+                    //
                     .allowMainThreadQueries().addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
                     .build()
         }
