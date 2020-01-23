@@ -39,7 +39,9 @@ import hedera.hgc.hgcwallet.database.wallet.WalletDao
 import hedera.hgc.hgcwallet.database.account.Account
 import hedera.hgc.hgcwallet.database.wallet.Wallet
 
-@Database(entities = [Wallet::class, Account::class, Contact::class, PayRequest::class, TxnRecord::class, Node::class], version = 4)
+@Database(entities = [Wallet::class, Account::class, Contact::class, PayRequest::class,
+                     TxnRecord::class, Node::class],
+          version = 4)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
@@ -74,31 +76,51 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
 
-        internal val MIGRATION_1_2: Migration = object : Migration(1, 2) {
+        private val MIGRATION_1_2: Migration = object: Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
-                database.execSQL("ALTER TABLE Account " + " ADD COLUMN lastBalanceCheck INTEGER")
+                database.execSQL("ALTER TABLE Account ADD COLUMN lastBalanceCheck INTEGER")
             }
         }
 
-        internal val MIGRATION_2_3: Migration = object : Migration(2, 3) {
+        private val MIGRATION_2_3: Migration = object: Migration(2, 3) {
             override fun migrate(database: SupportSQLiteDatabase) {
-                database.execSQL("ALTER TABLE Contact " + " ADD COLUMN metaData TEXT NOT NULL DEFAULT \"\" ")
-                database.execSQL("ALTER TABLE Wallet " + " ADD COLUMN keyDerivationType TEXT NOT NULL DEFAULT \"\" ")
+                database.execSQL("ALTER TABLE Contact " +
+                        " ADD COLUMN metaData TEXT NOT NULL DEFAULT \"\" ")
+                database.execSQL("ALTER TABLE Wallet " +
+                        " ADD COLUMN keyDerivationType TEXT NOT NULL DEFAULT \"\" ")
             }
         }
 
-        internal val MIGRATION_3_4: Migration = object : Migration(3, 4) {
+        private val MIGRATION_3_4: Migration = object: Migration(3, 4) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL("DROP TABLE SmartContract")
-                database.execSQL("CREATE TABLE `new_Account` (`walletId` INTEGER NOT NULL, `keyType` TEXT NOT NULL," +
-                        " `keySequenceIndex` INTEGER NOT NULL, `UID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `balance` INTEGER NOT NULL, `lastBalanceCheck` INTEGER," +
-                        " `realmNum` INTEGER NOT NULL, `shardNum` INTEGER NOT NULL, `accountNum` INTEGER NOT NULL, `isArchived` INTEGER NOT NULL," +
-                        " `isHidden` INTEGER NOT NULL, `accountType` TEXT NOT NULL DEFAULT \"auto\", `creationDate` INTEGER NOT NULL DEFAULT 0," +
-                        " FOREIGN KEY(`walletId`) REFERENCES `Wallet`(`walletId`) ON UPDATE NO ACTION ON DELETE CASCADE )")
-                database.execSQL("""
-                INSERT INTO new_Account (walletId, keyType, keySequenceIndex,name,balance,lastBalanceCheck,realmNum,shardNum,accountNum,isArchived,isHidden)
-                SELECT walletId, keyType, accountIndex,name,balance,lastBalanceCheck,realmNum,shardNum,accountNum,isArchived,isHidden FROM Account
-                """.trimIndent())
+                database.execSQL("" +
+                        "CREATE TABLE `new_Account` (" +
+                            "`walletId` INTEGER NOT NULL, " +
+                            "`keyType` TEXT NOT NULL, " +
+                            "`keySequenceIndex` INTEGER NOT NULL, " +
+                            "`UID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                            "`name` TEXT NOT NULL, " +
+                            "`balance` INTEGER NOT NULL, " +
+                            "`lastBalanceCheck` INTEGER, " +
+                            "`realmNum` INTEGER NOT NULL, " +
+                            "`shardNum` INTEGER NOT NULL, " +
+                            "`accountNum` INTEGER NOT NULL, " +
+                            "`isArchived` INTEGER NOT NULL, " +
+                            "`isHidden` INTEGER NOT NULL, " +
+                            "`accountType` TEXT NOT NULL DEFAULT \"auto\", " +
+                            "`creationDate` INTEGER NOT NULL DEFAULT 0, " +
+                            "FOREIGN KEY(`walletId`) REFERENCES `Wallet`(`walletId`) " +
+                                "ON UPDATE NO ACTION " +
+                                "ON DELETE CASCADE " +
+                        ")")
+                database.execSQL("" +
+                    "INSERT INTO new_Account " +
+                        "(walletId, keyType, keySequenceIndex, name, balance, lastBalanceCheck, " +
+                        "realmNum, shardNum, accountNum, isArchived, isHidden)" +
+                    "SELECT walletId, keyType, accountIndex, name, balance, lastBalanceCheck, " +
+                        "realmNum, shardNum, accountNum, isArchived, isHidden " +
+                    "FROM Account")
                 database.execSQL("DROP TABLE Account")
 
                 database.execSQL("ALTER TABLE new_Account RENAME TO Account")
