@@ -31,12 +31,11 @@ import com.wealthfront.magellan.Screen
 import hedera.hgc.hgcwallet.App
 import hedera.hgc.hgcwallet.R
 import hedera.hgc.hgcwallet.common.Singleton
-import hedera.hgc.hgcwallet.common.UserSettings
 import hedera.hgc.hgcwallet.modals.ExchangeRateInfo
 import hedera.hgc.hgcwallet.ui.customviews.TitleBarWrapper
 import java.util.*
 
-class ExchangeRateScreen : Screen<ExchangeRateView>() {
+class ExchangeRateScreen: Screen<ExchangeRateView>() {
 
     data class Params(val rateList: List<ExchangeRateInfo>)
 
@@ -47,9 +46,12 @@ class ExchangeRateScreen : Screen<ExchangeRateView>() {
     }
 }
 
-class ExchangeRateView(context: Context, val params: ExchangeRateScreen.Params) : BaseScreenView<ExchangeRateScreen>(context) {
-
-
+class ExchangeRateView(
+        context: Context,
+        val params: ExchangeRateScreen.Params
+):
+        BaseScreenView<ExchangeRateScreen>(context)
+{
     init {
         View.inflate(context, R.layout.view_exchange_rate_layout, this)
         TitleBarWrapper(findViewById(R.id.titleBar)).apply {
@@ -65,16 +67,22 @@ class ExchangeRateView(context: Context, val params: ExchangeRateScreen.Params) 
         }
 
         findViewById<TextView>(R.id.tv_avg_exchange_rate)?.apply {
-            text = "1 ${context.getString(R.string.text_hgc_currency_icon)} = ${Singleton.formatUSD(Singleton.hgcToUSD(Singleton.toNanoCoins(1.0)), true, maxFractionDigitCount = 99)}"
+            val amount = Singleton.hgcToUSD(Singleton.toNanoCoins(1.0))
+            val usd = Singleton.formatUSD(amount, true, maxFractionDigitCount = 99)
+            text = "1 ${context.getString(R.string.text_hgc_currency_icon)} = $usd"
         }
     }
 }
 
-private class ExchangeRateListAdapter(private val exchangeRateList: List<ExchangeRateInfo>) : RecyclerView.Adapter<ExchangeInfoViewHolder>() {
+private class ExchangeRateListAdapter(
+        private val exchangeRateList: List<ExchangeRateInfo>
+):
+        RecyclerView.Adapter<ExchangeInfoViewHolder>()
+{
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExchangeInfoViewHolder {
+
         val itemView = LayoutInflater.from(parent.context)
                 .inflate(R.layout.exchange_rate_row, parent, false)
-
         return ExchangeInfoViewHolder(itemView)
     }
 
@@ -83,25 +91,16 @@ private class ExchangeRateListAdapter(private val exchangeRateList: List<Exchang
         holder.setData(exchangeRateList[position])
     }
 
-    override fun getItemCount(): Int {
-        return exchangeRateList.size
-    }
+    override fun getItemCount(): Int { return exchangeRateList.size }
 }
 
-private class ExchangeInfoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val tvExchangeName: TextView
-    val tvLast: TextView
-    val tvBid: TextView
-    val tvAsk: TextView
-    val tvUpdatedTime: TextView
+private class ExchangeInfoViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
-    init {
-        tvExchangeName = view.findViewById(R.id.text_exchange_name)
-        tvLast = view.findViewById(R.id.text_last)
-        tvBid = view.findViewById(R.id.text_bid)
-        tvAsk = view.findViewById(R.id.text_ask)
-        tvUpdatedTime = view.findViewById(R.id.text_time)
-    }
+    val tvExchangeName: TextView = view.findViewById(R.id.text_exchange_name)
+    val tvLast: TextView = view.findViewById(R.id.text_last)
+    val tvBid: TextView = view.findViewById(R.id.text_bid)
+    val tvAsk: TextView = view.findViewById(R.id.text_ask)
+    val tvUpdatedTime: TextView = view.findViewById(R.id.text_time)
 
     fun setData(rateInfo: ExchangeRateInfo) {
 
@@ -112,8 +111,10 @@ private class ExchangeInfoViewHolder(view: View) : RecyclerView.ViewHolder(view)
         tvLast.text = "${App.instance.getString(R.string.last)}: $last"
         tvBid.text = "${App.instance.getString(R.string.bid)}: $bid"
         tvAsk.text = "${App.instance.getString(R.string.ask)}: $ask"
-        val updateTime = rateInfo.lastUpdated?.let { Singleton.getDateFormat(Date(it * 1000L)) }
-                ?: "--"
+        val updateTime = rateInfo.lastUpdated?.let {
+                Singleton.getDateFormat(Date(it * 1000L))
+            }
+            ?: "--"
         tvUpdatedTime.text = App.instance.getString(R.string.text_last_updated, updateTime)
     }
 }
