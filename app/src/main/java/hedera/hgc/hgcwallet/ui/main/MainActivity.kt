@@ -147,7 +147,10 @@ class MainActivity : BaseActivity() {
 
         val syncButton = findViewById<ImageView>(R.id.image_sync)?.apply {
             visibility = View.VISIBLE
-            setOnClickListener { synchronizeBalance(true) }
+            setOnClickListener {
+                synchronizeBalance(true)
+                HbarTicker.requestHbarPriceFromExchanges()
+            }
         }
 
         val navigationView2 = findViewById<NavigationView>(R.id.nav_view2)?.apply {
