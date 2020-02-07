@@ -56,8 +56,7 @@ import java.util.*
 
 object Singleton {
     private val publicKeyMap = HashMap<Long, String>()
-    public val apiLogs = StringBuilder()
-    private val disposables = CompositeDisposable()
+    val apiLogs = StringBuilder()
 
     private var defaultExchangeRate = 0.12
 
@@ -392,31 +391,7 @@ object Singleton {
         }
     }
 
-
-    private fun getExchangeURL(exchange: Exchange): String {
-        return when (exchange) {
-            Exchange.Bitrex -> "https://api.bittrex.com/api/v1.1/public/getticker?market=USD-HBAR"
-            Exchange.Okcoin -> "https://www.okcoin.com/api/spot/v3/instruments/HBAR-USD/ticker"
-            Exchange.Liquid -> "https://api.liquid.com/products/557"
-        }
-    }
-
-
-    fun updateExchangeRate() {
-        Exchange.values().forEach { exchange ->
-            disposables.add((+getURL(getExchangeURL(exchange))).subscribe({
-                it?.let {
-                    UserSettings.setExchangeRateData(exchange, it)
-                    loadExchangeRate()
-                    log("Exchange rates from ${exchange.value} >> $it)")
-                }
-            }, {
-                log("Failed to load exchange rate for ${exchange.value} >> ${it.message})")
-            }))
-        }
-    }
-
-    private fun loadExchangeRate() {
+    fun loadExchangeRate() {
         val rates = getAllRates().mapNotNull{ it.last }.sorted()
         if (rates.isEmpty()) { return }
         val lowerMedianIndex = rates.count() / 2
@@ -578,13 +553,5 @@ object Singleton {
         // the mail subject
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "android wallet logs")
         activity?.startActivity(Intent.createChooser(emailIntent, "Send email..."))
-    }
-
-    fun log(message: String) {
-        if (Config.isLoggingEnabled) {
-            val LOG = LoggerFactory.getLogger(this.javaClass)
-            LOG.debug(message)
-            Singleton.apiLogs.append(message)
-        }
     }
 }
