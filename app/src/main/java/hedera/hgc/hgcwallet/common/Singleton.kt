@@ -395,9 +395,9 @@ object Singleton {
 
     private fun getExchangeURL(exchange: Exchange): String {
         return when (exchange) {
-            Exchange.Bitrex -> Config.bitrexURL
-            Exchange.Okcoin -> Config.okcoinURL
-            Exchange.Liquid -> Config.liquidURL
+            Exchange.Bitrex -> "https://api.bittrex.com/api/v1.1/public/getticker?market=USD-HBAR"
+            Exchange.Okcoin -> "https://www.okcoin.com/api/spot/v3/instruments/HBAR-USD/ticker"
+            Exchange.Liquid -> "https://api.liquid.com/products/557"
         }
     }
 
