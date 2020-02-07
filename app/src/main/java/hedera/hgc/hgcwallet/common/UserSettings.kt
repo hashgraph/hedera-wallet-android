@@ -45,12 +45,12 @@ object UserSettings {
     const val KEY_EXCHANGE_RATE_EXP_TIME_SECONDS_NEXT = "exchange_rate_exp_time_seconds_next"
 
 
-    const val KEY_BITREX_EXCHANGE_RATE_DATA = "bitrex_exchange_rate_data"
+    const val KEY_BITTREX_EXCHANGE_RATE_DATA = "bitrex_exchange_rate_data"
     const val KEY_LIQUID_EXCHANGE_RATE_DATA = "liquid_exchange_rate_data"
     const val KEY_OKCOIN_EXCHANGE_RATE_DATA = "okcoin_exchange_rate_data"
 
 
-    const val KEY_BITREX_EXCHANGE_RATE_DATE = "bitrex_exchange_rate_date"
+    const val KEY_BITTREX_EXCHANGE_RATE_DATE = "bitrex_exchange_rate_date"
     const val KEY_LIQUID_EXCHANGE_RATE_DATE = "liquid_exchange_rate_date"
     const val KEY_OKCOIN_EXCHANGE_RATE_DATE = "okcoin_exchange_rate_date"
 
@@ -145,25 +145,10 @@ object UserSettings {
         }
     }
 
-    fun setExchangeRateData(exchange: Exchange, data: String) {
-        val (dataKey, dateKey) = when (exchange) {
-            Exchange.Bitrex -> KEY_BITREX_EXCHANGE_RATE_DATA to KEY_BITREX_EXCHANGE_RATE_DATE
-
-            Exchange.Okcoin -> KEY_OKCOIN_EXCHANGE_RATE_DATA to KEY_OKCOIN_EXCHANGE_RATE_DATE
-
-            Exchange.Liquid -> KEY_LIQUID_EXCHANGE_RATE_DATA to KEY_LIQUID_EXCHANGE_RATE_DATE
-
-        }
-
-        setValue(dataKey, data)
-        setValue(dateKey, Singleton.getCurrentUTCSeconds())
-
-    }
-
     fun getExchangeRateData(exchange: Exchange): Pair<String, Long>? {
 
         val (dataKey, dateKey) = when (exchange) {
-            Exchange.Bitrex -> KEY_BITREX_EXCHANGE_RATE_DATA to KEY_BITREX_EXCHANGE_RATE_DATE
+            Exchange.Bitrex -> KEY_BITTREX_EXCHANGE_RATE_DATA to KEY_BITTREX_EXCHANGE_RATE_DATE
 
             Exchange.Okcoin -> KEY_OKCOIN_EXCHANGE_RATE_DATA to KEY_OKCOIN_EXCHANGE_RATE_DATE
 

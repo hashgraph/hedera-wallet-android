@@ -57,6 +57,7 @@ import hedera.hgc.hgcwallet.hapi.tasks.UpdateTransactionsTask
 import hedera.hgc.hgcwallet.local_auth.AuthListener
 import hedera.hgc.hgcwallet.local_auth.AuthManager
 import hedera.hgc.hgcwallet.local_auth.AuthType
+import hedera.hgc.hgcwallet.model_controller.exchange.HbarTicker
 import hedera.hgc.hgcwallet.network.API
 import hedera.hgc.hgcwallet.postURL
 import hedera.hgc.hgcwallet.ui.BaseActivity
@@ -183,6 +184,8 @@ class MainActivity : BaseActivity() {
                 true
             }
         }
+
+        HbarTicker.load()
     }
 
     internal fun onMasterResetClick() {
@@ -330,7 +333,7 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        Singleton.updateExchangeRate()
+        HbarTicker.requestHbarPriceFromExchanges()
         if (!AuthManager.hasAuth()) {
             requestAuth(0)
         } else {
