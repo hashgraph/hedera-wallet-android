@@ -68,7 +68,8 @@ class QRPreviewView(context: Context, val param: QRPreviewScreen.Params) : BaseS
     }
 
     fun reloadData() {
-        qrCodeDescription?.text = param.qrString
+        qrCodeDescription?.text = "" // FIXME: trace removal to root
+                                     // was: param.qrString
         param.bitmap?.let {
             qrCodeImage?.setImageBitmap(it)
         }
