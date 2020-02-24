@@ -1,20 +1,9 @@
 /*
- *
- *  Copyright 2019 Hedera Hashgraph LLC
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *
- */
+* There are methods in this codebase that uses references from a few
+* Apache License 2.0 attribution repository below is the lists
+* https://github.com/bitcoinj/bitcoinj
+* core/src/main/java/org/bitcoinj/crypto/MnemonicCode.java
+*/
 
 package hedera.hgc.hgcwallet.crypto.bip39;
 
@@ -77,7 +66,7 @@ public class Mnemonic {
             for (int ii = 0; ii < 11; ++ii)
                 concatBits[(wordindex * 11) + ii] = (ndx & (1 << (10 - ii))) != 0;
             ++wordindex;
-        }        
+        }
 
         int checksumLengthBits = concatLenBits / 33;
         int entropyLengthBits = concatLenBits - checksumLengthBits;
@@ -116,11 +105,11 @@ public class Mnemonic {
 
         byte[] hash = CryptoUtils.sha256Digest(entropy);
         boolean[] hashBits = bytesToBits(hash);
-        
+
         boolean[] entropyBits = bytesToBits(entropy);
         int checksumLengthBits = entropyBits.length / 32;
 
-        // We append these bits to the end of the initial entropy. 
+        // We append these bits to the end of the initial entropy.
         boolean[] concatBits = new boolean[entropyBits.length + checksumLengthBits];
         System.arraycopy(entropyBits, 0, concatBits, 0, entropyBits.length);
         System.arraycopy(hashBits, 0, concatBits, entropyBits.length, checksumLengthBits);
@@ -141,8 +130,8 @@ public class Mnemonic {
             }
             words.add(this.wordList.get(index));
         }
-            
-        return words;        
+
+        return words;
     }
 
     /**

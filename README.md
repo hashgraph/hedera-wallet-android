@@ -1,4 +1,4 @@
-# Hedera Mobile Wallet Beta-2019
+# Hedera Mobile Wallet 2020
 
 The Hedera HashGraph wallet is a software program that creates, stores and manages private and public keys, it also allows the user to interact with the Hedera Hashgraph Network. This wallet enables users to send and receive payments in Hedera native HBAR crypto currency and also monitor the balance.
 
@@ -22,5 +22,6 @@ This uses a unique combination of BIP39 and PBKDF2 to generate a sequential keys
 6. Update & Change keys
 7. Get Records
 8. Fees Customization
+9. Exchange rate update
 
 Note: app.properties file is needed to build. Due to proprietary issues, this file has not been included here.
