@@ -22,7 +22,6 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
-import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
 import com.google.android.material.navigation.NavigationView
@@ -57,7 +56,7 @@ import hedera.hgc.hgcwallet.hapi.tasks.UpdateTransactionsTask
 import hedera.hgc.hgcwallet.local_auth.AuthListener
 import hedera.hgc.hgcwallet.local_auth.AuthManager
 import hedera.hgc.hgcwallet.local_auth.AuthType
-import hedera.hgc.hgcwallet.network.API
+import hedera.hgc.hgcwallet.model_controller.exchange.HbarTicker
 import hedera.hgc.hgcwallet.postURL
 import hedera.hgc.hgcwallet.ui.BaseActivity
 import hedera.hgc.hgcwallet.ui.LauncherActivity
@@ -69,19 +68,16 @@ import hedera.hgc.hgcwallet.ui.main.developertool.NodeScreen
 import hedera.hgc.hgcwallet.ui.main.home.AccountBalanceScreen
 import hedera.hgc.hgcwallet.ui.main.navigation_menu.AboutScreen
 import hedera.hgc.hgcwallet.ui.main.navigation_menu.BackupWalletScreen
-import hedera.hgc.hgcwallet.ui.main.navigation_menu.ExchangeRateScreen
 import hedera.hgc.hgcwallet.ui.main.pay.PayScreen
 import hedera.hgc.hgcwallet.ui.main.pay.PayType
 import hedera.hgc.hgcwallet.ui.main.request.RequestListScreen
 import hedera.hgc.hgcwallet.ui.main.settings.SettingsScreen
 import hedera.hgc.hgcwallet.ui.main.transcation.CreateAccountScreen
 import hedera.hgc.hgcwallet.ui.onboard.Bip32Migration.Bip32MigrationActivity
-import hedera.hgc.hgcwallet.ui.onboard.Bip32Migration.Bip32MigrationPromptScreen
 import hedera.hgc.hgcwallet.ui.scan.QRScanListener
 import hedera.hgc.hgcwallet.unaryPlus
-import io.reactivex.Single
+import hedera.hgc.hgcwallet.view_controller.exchange_rate.ExchangeRateScreen
 import org.json.JSONObject
-import java.io.ByteArrayInputStream
 import java.io.IOException
 import java.io.InputStream
 import java.lang.Exception
@@ -151,7 +147,10 @@ class MainActivity : BaseActivity() {
 
         val syncButton = findViewById<ImageView>(R.id.image_sync)?.apply {
             visibility = View.VISIBLE
-            setOnClickListener { synchronizeBalance(true) }
+            setOnClickListener {
+                synchronizeBalance(true)
+                HbarTicker.requestHbarPriceFromExchanges()
+            }
         }
 
         val navigationView2 = findViewById<NavigationView>(R.id.nav_view2)?.apply {
@@ -183,6 +182,8 @@ class MainActivity : BaseActivity() {
                 true
             }
         }
+
+        HbarTicker.load()
     }
 
     internal fun onMasterResetClick() {
@@ -330,7 +331,7 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        Singleton.updateExchangeRate()
+        HbarTicker.requestHbarPriceFromExchanges()
         if (!AuthManager.hasAuth()) {
             requestAuth(0)
         } else {

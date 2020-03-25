@@ -32,8 +32,4 @@ object Config {
     const val privacyPolicy = "https://www.hedera.com/privacy"
     const val maxAllowedMemoLength = 100
     const val passcodeLength = 6
-
-    const val  bitrexURL = "https://api.bittrex.com/api/v1.1/public/getticker?market=USD-HBAR"
-    const val  liquidURL = "https://api.liquid.com/products/557"
-    const val  okcoinURL = "https://www.okcoin.com/api/spot/v3/instruments/HBAR-USD/ticker"
 }

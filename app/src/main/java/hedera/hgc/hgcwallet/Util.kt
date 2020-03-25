@@ -62,27 +62,4 @@ fun postURL(url: String, body: ByteArray): Single<Boolean> {
     }
 }
 
-fun getURL(url: String): Single<String?> {
-    return Single.fromCallable {
-
-        val request = Request.Builder()
-                .url(url)
-                .build()
-
-        var result: String? = null
-
-        val client = OkHttpClient()
-        client.protocols = Arrays.asList(Protocol.HTTP_1_1)
-        try {
-            val response: Response = client.newCall(request).execute()
-            result = response.body().string()
-
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-        result
-    }
-}
-
 fun getByteCount(text: String) = text.toByteArray().count()

@@ -56,8 +56,7 @@ import java.util.*
 
 object Singleton {
     private val publicKeyMap = HashMap<Long, String>()
-    public val apiLogs = StringBuilder()
-    private val disposables = CompositeDisposable()
+    val apiLogs = StringBuilder()
 
     private var defaultExchangeRate = 0.12
 
@@ -392,33 +391,12 @@ object Singleton {
         }
     }
 
-
-    private fun getExchangeURL(exchange: Exchange): String {
-        return when (exchange) {
-            Exchange.Bitrex -> Config.bitrexURL
-            Exchange.Okcoin -> Config.okcoinURL
-            Exchange.Liquid -> Config.liquidURL
-        }
-    }
-
-
-    fun updateExchangeRate() {
-        Exchange.values().forEach { exchange ->
-            disposables.add((+getURL(getExchangeURL(exchange))).subscribe({
-                it?.let {
-                    UserSettings.setExchangeRateData(exchange, it)
-                    loadExchangeRate()
-                    log("Exchange rates from ${exchange.value} >> $it)")
-                }
-            }, {
-                log("Failed to load exchange rate for ${exchange.value} >> ${it.message})")
-            }))
-        }
-    }
-
-    private fun loadExchangeRate() {
-        defaultExchangeRate = getAllRates().mapNotNull { it.last }.let { if (it.isNotEmpty()) (it.sum() / it.count().toDouble()) else defaultExchangeRate }
-
+    fun loadExchangeRate() {
+        val rates = getAllRates().mapNotNull{ it.last }.sorted()
+        if (rates.isEmpty()) { return }
+        val lowerMedianIndex = rates.count() / 2
+        val offset = if (rates.count() % 2 == 0) 1 else 0
+        defaultExchangeRate = (rates[lowerMedianIndex] + rates[lowerMedianIndex - offset]) / 2
     }
 
     fun getAllRates(): List<ExchangeRateInfo> {
@@ -575,13 +553,5 @@ object Singleton {
         // the mail subject
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "android wallet logs")
         activity?.startActivity(Intent.createChooser(emailIntent, "Send email..."))
-    }
-
-    fun log(message: String) {
-        if (Config.isLoggingEnabled) {
-            val LOG = LoggerFactory.getLogger(this.javaClass)
-            LOG.debug(message)
-            Singleton.apiLogs.append(message)
-        }
     }
 }
