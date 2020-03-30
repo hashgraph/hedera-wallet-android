@@ -25,8 +25,6 @@ import android.util.Log
 
 import org.json.JSONObject
 
-import io.branch.referral.Branch
-import io.branch.referral.BranchError
 import hedera.hgc.hgcwallet.R
 import hedera.hgc.hgcwallet.common.Singleton
 import hedera.hgc.hgcwallet.common.UserSettings
@@ -47,16 +45,7 @@ class LauncherActivity : AuthActivity() {
         if (uri != null) {
             UserSettings.setValue(UserSettings.KEY_INTENT_URL, uri.toString())
         }
-        Branch.getInstance().initSession({ referringParams, error ->
-            if (error == null) {
-                Log.i("BRANCH SDK", referringParams!!.toString())
-                UserSettings.setValue(UserSettings.KEY_BRANCH_PARAMS, referringParams)
-            } else {
-                Log.i("BRANCH SDK", error.message)
-            }
-            launchActivity()
-        }, uri)
-
+        launchActivity()
     }
 
     private fun launchActivity() {

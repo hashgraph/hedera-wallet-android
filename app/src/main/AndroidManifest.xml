@@ -96,17 +96,6 @@
             android:screenOrientation="portrait"
             tools:replace="screenOrientation" />
 
-        <!-- Branch init -->
-        <meta-data
-            android:name="io.branch.sdk.BranchKey"
-            android:value="${BranchKey}" />
-        <meta-data
-            android:name="io.branch.sdk.BranchKey.test"
-            android:value="${BranchKeyTest}" />
-        <meta-data
-            android:name="io.branch.sdk.TestMode"
-            android:value="false" /> <!-- Set to true to use Branch_Test_Key -->
-
 
         <!-- Branch install referrer tracking (optional) -->
         <receiver
