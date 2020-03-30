@@ -22,7 +22,6 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 
-import io.branch.referral.Branch
 import hedera.hgc.hgcwallet.hapi.AddressBook
 import hedera.hgc.hgcwallet.database.AppDatabase
 
@@ -36,11 +35,6 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-        if (BuildConfig.USE_TEST_BRANCHIO)
-            Branch.enableTestMode()
-        Branch.enableLogging()
-        Branch.getAutoInstance(this)
 
         database = AppDatabase.createOrGetAppDatabase(this)
 
