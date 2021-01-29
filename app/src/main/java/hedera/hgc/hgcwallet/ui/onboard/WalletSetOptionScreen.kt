@@ -49,11 +49,6 @@ class WalletSetOptionView(context: Context) : BaseScreenView<WalletSetOptionScre
         findViewById<Button>(R.id.restore_wallet)?.apply {
             setOnClickListener { screen?.onSelect(true) }
         }
-        findViewById<Button>(R.id.new_wallet)?.apply {
-            setOnClickListener { screen?.onSelect(false) }
-        }
-
-
     }
 
 

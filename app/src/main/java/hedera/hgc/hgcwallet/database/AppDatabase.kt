@@ -62,6 +62,8 @@ abstract class AppDatabase : RoomDatabase() {
 
     fun clearDatabase() {
         clearAllTables()
+        // waiting 1 sec to allow clearing tables to finish.
+        Thread.sleep(1_000);
     }
 
     companion object: RoomDatabase.Callback() {
