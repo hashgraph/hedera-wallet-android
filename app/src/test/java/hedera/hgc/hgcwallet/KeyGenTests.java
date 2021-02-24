@@ -18,15 +18,25 @@
 
 package hedera.hgc.hgcwallet;
 
+import com.google.common.io.BaseEncoding;
+import hedera.hgc.hgcwallet.common.Singleton;
+import hedera.hgc.hgcwallet.crypto.EDKeyChain;
+import hedera.hgc.hgcwallet.crypto.HGCSeed;
+import hedera.hgc.hgcwallet.crypto.KeyChain;
+import hedera.hgc.hgcwallet.crypto.KeyPair;
+import hedera.hgc.hgcwallet.crypto.bip39.MnemonicException;
 import org.junit.Test;
 import org.spongycastle.util.encoders.Hex;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import hedera.hgc.hgcwallet.crypto.EDKeyPair;
 import hedera.hgc.hgcwallet.crypto.Reference;
 import hedera.hgc.hgcwallet.crypto.SLIP10;
 import hedera.hgc.hgcwallet.crypto.bip39.Mnemonic;
+import hedera.hgc.hgcwallet.crypto.EDBip32KeyChain;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -82,7 +92,35 @@ public class KeyGenTests {
         assertEquals(entropyStr, Hex.toHexString(conevertedEntropy));
         assertEquals("primary taxi dance car case pelican priority kangaroo tackle math mimic matter primary fetch priority jazz slow another spell fetch primary fetch upon hip", words);
     }
-    
+
+    @Test
+    public void testWordListFromIOS() throws Exception {
+        String wordsStr1 = "glance nothing increase cancel list fence flower joy suffer offer aunt very expect ordinary rug estate silly silly select aim among kangaroo add ready";
+        String wordsStr2 = "there season tumble dragon regret glad shoot ecology dignity flight major grape viable phrase kid pig drink artist tornado canal bracket velvet ketchup demise";
+        String wordsStr3 = "squeeze essay exact chapter tattoo boat giraffe cable either blast pattern slice grab erupt grant useless retire drink lake ice art web already flip";
+        String wordsStr4 = "sold accent loosen cactus retina slowly freely suffer habit soil tip pray stem aboard suite mad coax pagan silken tomb much gender";
+        List<String> wordList = new ArrayList<String>(Arrays.asList(wordsStr4.split(" ")));
+
+        HGCSeed seed = new HGCSeed(wordList);
+        KeyPair keyPair;
+
+        if(wordList.size() > 22) {
+            KeyChain bip32KeyChain = new EDBip32KeyChain(seed);
+            keyPair = bip32KeyChain.keyAtIndex(0);
+
+        } else {
+            KeyChain customKeyChain = new EDKeyChain(seed);
+            keyPair = customKeyChain.keyAtIndex(0);
+        }
+
+        System.out.println(bytesToString(keyPair.getPublicKey()));
+        System.out.println(bytesToString(keyPair.getPrivateKey()));
+    }
+
+    private String bytesToString(byte[] bytes) {
+        return BaseEncoding.base16().lowerCase().encode(bytes);
+    }
+
     @Test
     public void testBip39ComaptibilityWithLedgerWallet() throws Exception {
         String words = "draft struggle fitness mimic mountain rare lonely grocery topple wreck satoshi kangaroo balcony odor tiger crush bamboo parent monkey afraid elite earn hundred learn";

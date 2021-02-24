@@ -47,7 +47,7 @@ class WalletSetOptionView(context: Context) : BaseScreenView<WalletSetOptionScre
         View.inflate(context, R.layout.fragment_wallet_selection, this)
 
         findViewById<Button>(R.id.restore_wallet)?.apply {
-            setOnClickListener { screen?.onSelect(true) }
+            setOnClickListener { screen?.onSelect(false) }
         }
     }
 

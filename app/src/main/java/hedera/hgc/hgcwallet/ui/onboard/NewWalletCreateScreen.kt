@@ -57,7 +57,7 @@ class NewWalletCreateScreen() : Screen<NewWalletCreateView>() {
     }
 
     internal fun onDoneButtonClick() {
-        navigator?.goTo(PinSetUpOptionScreen(param.seed, KeyDerivation.BIP32, null));
+        navigator?.goTo(PinSetUpOptionScreen(param.seed, KeyDerivation.HGC, null));
     }
 }
 

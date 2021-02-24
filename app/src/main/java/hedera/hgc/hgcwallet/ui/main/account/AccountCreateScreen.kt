@@ -73,7 +73,8 @@ class AccountCreateScreen(account: Account, titleName: String, image: Boolean) :
 
     internal fun onCopyPublicKeyClick() {
         val publickey = Singleton.publicKeyString(params.account)
-        Singleton.copyToClipBoard(publickey, activity)
+        val privatekey = Singleton.privateKeyString(params.account)
+        Singleton.copyToClipBoard("$publickey || $privatekey", activity)
         Singleton.showToast(activity, activity.getString(R.string.copy_data_clipboard_message))
     }
 

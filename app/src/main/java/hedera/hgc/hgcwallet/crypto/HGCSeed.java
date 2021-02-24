@@ -18,11 +18,14 @@
 
 package hedera.hgc.hgcwallet.crypto;
 
+import android.os.Build;
 import androidx.annotation.NonNull;
 import android.text.TextUtils;
 
 import java.util.List;
+import java.util.prefs.InvalidPreferencesFormatException;
 
+import androidx.annotation.RequiresApi;
 import hedera.hgc.hgcwallet.crypto.bip39.Mnemonic;
 import hedera.hgc.hgcwallet.crypto.bip39.MnemonicException;
 
@@ -35,11 +38,12 @@ public class HGCSeed {
         this.entropy = entropy;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public HGCSeed(List<String> mnemonic) throws Exception {
         if (mnemonic.size() == HGCSeed.bip39WordListSize) {
             this.entropy = new Mnemonic().toEntropy(mnemonic);
         } else  {
-            Reference reference = new Reference(TextUtils.join(" ", mnemonic));
+            Reference reference = new Reference(String.join(" ", mnemonic));
             this.entropy = reference.toBytes();
         }
     }
@@ -47,8 +51,9 @@ public class HGCSeed {
     @NonNull
     public List<String> toWordsList(){
         try {
-            return new Mnemonic().toMnemonic(entropy);
-        } catch (MnemonicException.MnemonicLengthException e) {
+            return new Reference(entropy).toWordsList();
+//            return new Mnemonic().toMnemonic(entropy);
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
